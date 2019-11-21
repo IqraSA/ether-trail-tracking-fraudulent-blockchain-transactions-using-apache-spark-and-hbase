@@ -5,17 +5,15 @@
 spark.root=/opt/spark
 hadoop.root=/usr/local/hadoop
 
-# Page Rank
-pr_app.name=Page Rank
-pr_jar.name=page-rank-1.0.jar
-pr_jar.path=page-rank/target/${pr_jar.name}
-pr_job.name=pr.PageRank
+# Graph Structure
+gs_app.name=Graph Structure
+gs_jar.name=graph-structure-1.0.jar
+gs_jar.path=graph-structure/target/${gs_jar.name}
+gs_job.name=.gs.GraphStructure
 
 local.master=local[*]
 local.input=input
-local.k=3
-local.iterations=3
-local.pr_output=pr_output
+local.gs_output=gs_output
 
 # Pseudo-Cluster Execution
 hdfs.user.name=sidharth
@@ -41,12 +39,12 @@ clean-local-output:
 	rm -rf ${local.fc_output}*
 	rm -rf ${aws.log.dir}*
 
-clean-local-output-pr:
-	rm -rf ${local.pr_output}*
+clean-local-output-gs:
+	rm -rf ${local.gs_output}*
 
 # Runs standalone
-local-pr: jar clean-local-output-pr
-	spark-submit --class ${pr_job.name} --driver-memory 5g  --executor-memory 6g --master ${local.master} --name "${pr_app.name}" ${pr_jar.path} ${local.input} ${local.k} ${local.iterations} ${local.pr_output}
+local-gs: jar clean-local-output-gs
+	spark-submit --class ${pr_job.name} --master ${local.master} --name "${gs_app.name}" ${gs_jar.path} ${local.input} ${local.gs_output}
 
 local-fc: jar clean-local-output-pr
 	spark-submit --class ${pr_job.name} --driver-memory 5g  --executor-memory 6g --master ${local.master} --name "${pr_app.name}" ${pr_jar.path} ${local.input} -1 ${local.iterations} ${local.pr_output}
