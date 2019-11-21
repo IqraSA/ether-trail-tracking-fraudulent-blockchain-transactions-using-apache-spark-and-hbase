@@ -9,7 +9,7 @@ hadoop.root=/usr/local/hadoop
 gs_app.name=Graph Structure
 gs_jar.name=graph-structure-1.0.jar
 gs_jar.path=graph-structure/target/${gs_jar.name}
-gs_job.name=.gs.GraphStructure
+gs_job.name=gs.GraphStructure
 
 local.master=local[*]
 local.input=input
@@ -44,7 +44,7 @@ clean-local-output-gs:
 
 # Runs standalone
 local-gs: jar clean-local-output-gs
-	spark-submit --class ${pr_job.name} --master ${local.master} --name "${gs_app.name}" ${gs_jar.path} ${local.input} ${local.gs_output}
+	spark-submit --class ${gs_job.name} --master ${local.master} --name "${gs_app.name}" ${gs_jar.path} ${local.input} ${local.gs_output}
 
 local-fc: jar clean-local-output-pr
 	spark-submit --class ${pr_job.name} --driver-memory 5g  --executor-memory 6g --master ${local.master} --name "${pr_app.name}" ${pr_jar.path} ${local.input} -1 ${local.iterations} ${local.pr_output}

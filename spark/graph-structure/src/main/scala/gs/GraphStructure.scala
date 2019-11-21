@@ -20,16 +20,26 @@ object GraphStructure {
     val sc = spark.sparkContext
 
 
-    val transactionDF = spark.read.csv("input")
+    var transactionDF = spark.read.csv("input")
       .withColumnRenamed("_c0", "id")
       .withColumnRenamed("_c1", "receiver")
       .withColumnRenamed("_c2", "sender")
       .withColumnRenamed("_c3", "value")
       .withColumnRenamed("_c4", "index")
 
-    transactionDF.show()
+    transactionDF = transactionDF.filter("value != 0").select("id", "sender", "receiver", "value", "index").cache()
 
-    println("FILTERED")
-    transactionDF.filter("value != 0").show()
+    val transactionDF2 = transactionDF.as("df1")
+      .join(transactionDF.as("df2"))
+      .where($"df1.receiver" === $"df2.sender" && $"df1.index" < $"df2.index")
+      .select(col("df1.id").as("id_1"),
+        col("df1.sender").as("sender_1"),
+        col("df1.receiver").as("receiver_1"),
+        col("df1.value").as("value_1"),
+        col("df2.id").as("id_2"),
+        col("df2.sender").as("sender_2"),
+        col("df2.receiver").as("receiver_2"),
+        col("df2.value").as("value_2"),
+        col("df2.index"))
   }
 }
