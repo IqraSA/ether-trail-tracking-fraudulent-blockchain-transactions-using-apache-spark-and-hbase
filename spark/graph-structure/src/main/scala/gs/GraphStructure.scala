@@ -2,7 +2,7 @@ package gs
 
 import org.apache.log4j.LogManager
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{Column, SparkSession}
 import org.apache.spark.sql.functions._
 
 object GraphStructure {
@@ -17,29 +17,36 @@ object GraphStructure {
     val spark = SparkSession.builder().appName("Graph Structure").config(conf).getOrCreate()
     // IMP: Required for toDS, toDF functions
     import spark.implicits._
-    val sc = spark.sparkContext
-
 
     var transactionDF = spark.read.csv("input")
-      .withColumnRenamed("_c0", "id")
-      .withColumnRenamed("_c1", "receiver")
-      .withColumnRenamed("_c2", "sender")
-      .withColumnRenamed("_c3", "value")
-      .withColumnRenamed("_c4", "index")
+      .withColumnRenamed("_c0", "id_1")
+      .withColumnRenamed("_c1", "receiver_1")
+      .withColumnRenamed("_c2", "sender_1")
+      .withColumnRenamed("_c3", "value_1")
+      .withColumnRenamed("_c4", "index_1")
 
-    transactionDF = transactionDF.filter("value != 0").select("id", "sender", "receiver", "value", "index").cache()
+    transactionDF = transactionDF.filter("value_1 != 0").select("id_1", "sender_1", "receiver_1", "value_1", "index_1").cache()
+    var transactionDF2 = transactionDF
+    var indexCols = Seq("index_1")
 
-    val transactionDF2 = transactionDF.as("df1")
-      .join(transactionDF.as("df2"))
-      .where($"df1.receiver" === $"df2.sender" && $"df1.index" < $"df2.index")
-      .select(col("df1.id").as("id_1"),
-        col("df1.sender").as("sender_1"),
-        col("df1.receiver").as("receiver_1"),
-        col("df1.value").as("value_1"),
-        col("df2.id").as("id_2"),
-        col("df2.sender").as("sender_2"),
-        col("df2.receiver").as("receiver_2"),
-        col("df2.value").as("value_2"),
-        col("df2.index"))
+    for(i <- 2 to 5) {
+      transactionDF2 = transactionDF2.as("df1")
+        .join(transactionDF.as("df2"))
+        .where(col("df1.receiver_"+(i-1)) === col("df2.sender_1") && col("df1.index_"+(i-1)) < col("df2.index_1"))
+        .select(
+          col("df1.*"),
+          col("df2.id_1").as("id_"+i),
+          col("df2.sender_1").as("sender_"+i),
+          col("df2.receiver_1").as("receiver_"+i),
+          col("df2.value_1").as("value_"+i),
+          col("df2.index_1").as("index_"+i))
+
+          indexCols = indexCols :+ "index_"+i
+
+          // REF: https://stackoverflow.com/a/39818645
+          val transactionDF3 = transactionDF2.select(transactionDF2.columns.filter(colName => !indexCols.contains(colName)).map(colName => new Column(colName)): _*)
+
+          transactionDF3.write.csv(args(1) + "/" + i)
+    }
   }
 }
