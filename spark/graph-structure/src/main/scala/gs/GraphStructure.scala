@@ -31,8 +31,7 @@ object GraphStructure {
 
     for(i <- 2 to 5) {
       transactionDF2 = transactionDF2.as("df1")
-        .join(transactionDF.as("df2"))
-        .where(col("df1.receiver_"+(i-1)) === col("df2.sender_1") && col("df1.index_"+(i-1)) < col("df2.index_1"))
+        .join(transactionDF.as("df2"), col("df1.receiver_"+(i-1)) === col("df2.sender_1") && col("df1.index_"+(i-1)) < col("df2.index_1"), "left_outer")
         .select(
           col("df1.*"),
           col("df2.id_1").as("id_"+i),
@@ -42,11 +41,8 @@ object GraphStructure {
           col("df2.index_1").as("index_"+i))
 
           indexCols = indexCols :+ "index_"+i
-
-          // REF: https://stackoverflow.com/a/39818645
-          val transactionDF3 = transactionDF2.select(transactionDF2.columns.filter(colName => !indexCols.contains(colName)).map(colName => new Column(colName)): _*)
-
-          transactionDF3.write.csv(args(1) + "/" + i)
     }
+    // REF: https://stackoverflow.com/a/39818645
+    transactionDF2.select(transactionDF2.columns.filter(colName => !indexCols.contains(colName)).map(colName => new Column(colName)): _*).write.csv(args(1))
   }
 }
