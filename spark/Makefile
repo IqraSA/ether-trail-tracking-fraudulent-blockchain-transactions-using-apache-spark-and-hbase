@@ -4,6 +4,7 @@
 # -----------------------------------------------------------
 spark.root=/opt/spark
 hadoop.root=/usr/local/hadoop
+hbase.root=/usr/local/HBase
 
 # Graph Structure
 gs_app.name=Graph Structure
@@ -41,6 +42,12 @@ clean-local-output:
 
 clean-local-output-gs:
 	rm -rf ${local.gs_output}*
+
+start-hbase:
+	${hbase.root}/bin/start-hbase.sh
+
+stop-hbase:
+	${hbase.root}/bin/stop-hbase.sh
 
 # Runs standalone
 local-gs: jar clean-local-output-gs
@@ -178,4 +185,6 @@ distro:
 	cp README.txt build/deliv/Spark-Demo
 	tar -czf Spark-Demo.tar.gz -C build/deliv Spark-Demo
 	cd build/deliv && zip -rq ../../Spark-Demo.zip Spark-Demo
-	
+
+# https://computingforgeeks.com/how-to-install-apache-hadoop-hbase-on-ubuntu/
+# https://www.programcreek.com/2018/07/install-hadoop-and-hbase-on-ubuntu/
