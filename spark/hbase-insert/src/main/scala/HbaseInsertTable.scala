@@ -50,43 +50,39 @@ object HbaseInsertTable {
           .setColumnFamily(ColumnFamilyDescriptorBuilder.newBuilder("amount".getBytes).build())
           .setColumnFamily(ColumnFamilyDescriptorBuilder.newBuilder("index".getBytes).build())
           .build()
+//     Uncomment the below line if table is not present in HBase
 //      admin.createTable(tableDesc)
 //    }
 
-
-    // REF: https://stackoverflow.com/a/34388744
-    var transactionDF = spark.read.csv(args(0))
-      .withColumnRenamed("_c0", "id")
-      .withColumnRenamed("_c1", "receiver")
-      .withColumnRenamed("_c2", "sender")
-      .withColumnRenamed("_c3", "value")
-      .withColumnRenamed("_c4", "index")
+    val transactionRDD = spark.sparkContext.textFile(args(0))
 
 //    // REF: https://mapr.com/docs/52/Spark/SparkSQLandDataFrames.html
     // REF: https://stackoverflow.com/questions/42480770/wrting-to-hbase-maprdb-from-dataframe-in-spark-2
-    transactionDF.rdd.foreachPartition(rdd => {
+    transactionRDD.foreachPartition(rdd => {
       val config: Configuration = HBaseConfiguration.create()
       val connection: Connection = ConnectionFactory.createConnection(config)
       val table = connection.getTable(TableName.valueOf("ether_txn"))
       // REF: https://stackoverflow.com/questions/31356639/how-to-set-autoflush-false-in-hbase-table
       val mutator: BufferedMutator = connection.getBufferedMutator(TableName.valueOf("ether_txn"))
 
-      rdd.foreach(row => {
-        val sender = row(2).toString
-        val index = row(4).toString
+      rdd.foreach(line => {
+        val row = line.split(",")
+        val sender = row(2)
+        val index = row(4)
         val put = new Put(Bytes.add(Array(Bytes.toBytes(sender), Bytes.toBytes(index))))
 
-        put.addColumn(Bytes.toBytes("id"), Bytes.toBytes("id"), Bytes.toBytes(row(0).toString))
+        put.addColumn(Bytes.toBytes("id"), Bytes.toBytes("id"), Bytes.toBytes(row(0)))
         put.addColumn(Bytes.toBytes("sender"), Bytes.toBytes("sender"), Bytes.toBytes(sender))
-        put.addColumn(Bytes.toBytes("receiver"), Bytes.toBytes("receiver"), Bytes.toBytes(row(1).toString))
-        put.addColumn(Bytes.toBytes("amount"), Bytes.toBytes("amount"), Bytes.toBytes(row(3).toString))
+        put.addColumn(Bytes.toBytes("receiver"), Bytes.toBytes("receiver"), Bytes.toBytes(row(1)))
+        put.addColumn(Bytes.toBytes("amount"), Bytes.toBytes("amount"), Bytes.toBytes(row(3)))
         put.addColumn(Bytes.toBytes("index"), Bytes.toBytes("index"), Bytes.toBytes(index))
         mutator.mutate(put)
       })
-//      (new ImmutableBytesWritable(Bytes.toBytes(sender)), put)
+
       table.close()
       mutator.flush()
       mutator.close()
+      connection.close()
     })
   }
 }
