@@ -73,12 +73,14 @@ object HbaseInsertTable {
 
       rdd.foreach(row => {
         val sender = row(2).toString
-        val put = new Put(Bytes.toBytes(sender))
+        val index = row(4).toString
+        val put = new Put(Bytes.add(Array(Bytes.toBytes(sender), Bytes.toBytes(index))))
 
         put.addColumn(Bytes.toBytes("id"), Bytes.toBytes("id"), Bytes.toBytes(row(0).toString))
+        put.addColumn(Bytes.toBytes("sender"), Bytes.toBytes("sender"), Bytes.toBytes(sender))
         put.addColumn(Bytes.toBytes("receiver"), Bytes.toBytes("receiver"), Bytes.toBytes(row(1).toString))
-        put.addColumn(Bytes.toBytes("amount"), Bytes.toBytes("amount"), Bytes.toBytes(row(3).toString.toLong))
-        put.addColumn(Bytes.toBytes("index"), Bytes.toBytes("index"), Bytes.toBytes(row(4).toString.toLong))
+        put.addColumn(Bytes.toBytes("amount"), Bytes.toBytes("amount"), Bytes.toBytes(row(3).toString))
+        put.addColumn(Bytes.toBytes("index"), Bytes.toBytes("index"), Bytes.toBytes(index))
         mutator.mutate(put)
       })
 //      (new ImmutableBytesWritable(Bytes.toBytes(sender)), put)
