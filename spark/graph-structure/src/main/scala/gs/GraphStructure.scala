@@ -18,7 +18,7 @@ object GraphStructure {
     // IMP: Required for toDS, toDF functions
     import spark.implicits._
 
-    var transactionDF = spark.read.csv("input")
+    var transactionDF = spark.read.csv(args(0))
       .withColumnRenamed("_c0", "id_1")
       .withColumnRenamed("_c1", "receiver_1")
       .withColumnRenamed("_c2", "sender_1")

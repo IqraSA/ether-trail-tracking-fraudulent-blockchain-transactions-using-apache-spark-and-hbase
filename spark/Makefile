@@ -12,6 +12,12 @@ gs_jar.name=graph-structure-1.0.jar
 gs_jar.path=graph-structure/target/${gs_jar.name}
 gs_job.name=gs.GraphStructure
 
+# Hbase Insert
+hbase_insert_app.name=HBase Insert
+hbase_insert_jar.name=hbase-insert-1.0.jar
+hbase_insert_jar.path=hbase-insert/target/${hbase_insert_jar.name}
+hbase_insert_job.name=hbi.HbaseInsertTable
+
 local.master=local[*]
 local.input=input
 local.gs_output=gs_output
@@ -52,6 +58,9 @@ stop-hbase:
 # Runs standalone
 local-gs: jar clean-local-output-gs
 	spark-submit --class ${gs_job.name} --master ${local.master} --name "${gs_app.name}" ${gs_jar.path} ${local.input} ${local.gs_output}
+
+local-hbase-insert: jar
+	spark-submit --class ${hbase_insert_job.name} --master ${local.master} --name "${hbase_insert_app.name}" ${hbase_insert_jar.path} ${local.input}
 
 local-fc: jar clean-local-output-pr
 	spark-submit --class ${pr_job.name} --driver-memory 5g  --executor-memory 6g --master ${local.master} --name "${pr_app.name}" ${pr_jar.path} ${local.input} -1 ${local.iterations} ${local.pr_output}
@@ -106,6 +115,9 @@ download-output-hdfs:
 # https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html#Pseudo-Distributed_Operation
 pseudo: jar stop-yarn format-hdfs init-hdfs upload-input-hdfs start-yarn clean-local-output 
 	spark-submit --class ${job.name} --master yarn --deploy-mode cluster ${jar.name} ${local.input} ${local.input_nodes} ${local.sorted_output} ${local.no_followers_output}
+
+pseudo-hbase-insert: jar stop-yarn format-hdfs init-hdfs upload-input-hdfs start-yarn clean-local-output start-hbase
+	spark-submit --class ${hbase_insert_job.name} --master yarn --deploy-mode cluster "${hbase_insert_app.name}" ${hbase_insert_jar.path} ${local.input}
 
 # Runs pseudo-clustered (quickie).
 pseudoq: jar clean-local-output clean-hdfs-output 

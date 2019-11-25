@@ -6,6 +6,7 @@
   <version>1.0</version>
     <modules>
         <module>graph-structure</module>
+        <module>hbase-insert</module>
     </modules>
     <name>ether-trail</name>
   <properties>
@@ -34,6 +35,41 @@
       <version>${spark.version}</version>
       <scope>provided</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.hbase.connectors.spark/hbase-spark -->
+    <!-- https://mvnrepository.com/artifact/org.apache.hbase/hbase-spark -->
+<!--    <dependency>-->
+<!--      <groupId>org.apache.hbase</groupId>-->
+<!--      <artifactId>hbase-spark</artifactId>-->
+<!--      <version>2.0.0-alpha4</version>-->
+<!--      <scope>compile</scope>-->
+<!--    </dependency>-->
+    <!-- https://mvnrepository.com/artifact/org.apache.hbase.connectors.spark/hbase-spark -->
+    <dependency>
+      <groupId>org.apache.hbase.connectors.spark</groupId>
+      <artifactId>hbase-spark</artifactId>
+      <version>1.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+
+
+    <!-- https://mvnrepository.com/artifact/org.apache.hbase/hbase-client -->
+<!--    <dependency>-->
+<!--      <groupId>org.apache.hbase</groupId>-->
+<!--      <artifactId>hbase-client</artifactId>-->
+<!--      <version>2.2.2</version>-->
+<!--      <scope>compile</scope>-->
+<!--    </dependency>-->
+
+    <!-- https://mvnrepository.com/artifact/com.hortonworks/shc-core -->
+<!--    <dependency>-->
+<!--      <groupId>com.hortonworks</groupId>-->
+<!--      <artifactId>shc-core</artifactId>-->
+<!--      <version>1.1.1-2.1-s_2.11</version>-->
+<!--      <scope>compile</scope>-->
+<!--    </dependency>-->
+
+
 
     <!-- Example of dependency included in fat Jar package. -->
     <!--
@@ -44,6 +80,18 @@
 	</dependency>
 	-->
   </dependencies>
+  <repositories>
+    <repository>
+      <id>1</id>
+      <name>Hortonworks</name>
+      <url>https://repo.hortonworks.com/content/repositories/releases/</url>
+    </repository>
+    <repository>
+      <id>2</id>
+      <name>zhzhan</name>
+      <url>https://dl.bintray.com/spark-packages/maven/</url>
+    </repository>
+  </repositories>
   <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
     <plugins>
@@ -75,6 +123,18 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <filters>
+            <filter>
+              <artifact>*:*</artifact>
+              <excludes>
+                <exclude>META-INF/*.SF</exclude>
+                <exclude>META-INF/*.DSA</exclude>
+                <exclude>META-INF/*.RSA</exclude>
+              </excludes>
+            </filter>
+          </filters>
+        </configuration>
       </plugin>
     </plugins>
   </build>
