@@ -18,6 +18,13 @@ hbase_insert_jar.name=hbase-insert-1.0.jar
 hbase_insert_jar.path=hbase-insert/target/${hbase_insert_jar.name}
 hbase_insert_job.name=hbi.HbaseInsertTable
 
+# Hbase Read
+hbase_read_app.name=HBase Read
+hbase_read_jar.name=hbase-read-1.0.jar
+hbase_read_jar.path=hbase-read/target/${hbase_read_jar.name}
+hbase_read_job.name=hbr.HbaseReadJoin
+hbase_read_output=hbr_output
+
 local.master=local[*]
 local.input=input
 local.gs_output=gs_output
@@ -61,6 +68,9 @@ local-gs: jar clean-local-output-gs
 
 local-hbase-insert: jar
 	spark-submit --class ${hbase_insert_job.name} --master ${local.master} --name "${hbase_insert_app.name}" ${hbase_insert_jar.path} ${local.input}
+
+local-hbase-read: jar
+	spark-submit --class ${hbase_read_job.name} --master ${local.master} --name "${hbase_read_app.name}" ${hbase_read_jar.path} ${local.input} ${hbase_read_output}
 
 local-fc: jar clean-local-output-pr
 	spark-submit --class ${pr_job.name} --driver-memory 5g  --executor-memory 6g --master ${local.master} --name "${pr_app.name}" ${pr_jar.path} ${local.input} -1 ${local.iterations} ${local.pr_output}
