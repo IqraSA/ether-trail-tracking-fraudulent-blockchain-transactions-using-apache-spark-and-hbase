@@ -25,20 +25,26 @@ object HbaseReadJoin {
     val config: Configuration = HBaseConfiguration.create()
     config.set(TableInputFormat.INPUT_TABLE, "ether_txn")
 
-    val transactionRDD = spark.sparkContext.textFile(args(0))
+    var transactionRDD = spark.sparkContext.textFile(args(0))
+        .filter(line => {
+          val row = line.split(",")
+          row(3).toLong != 0
+        })
+
 
     // REF: https://mapr.com/docs/52/Spark/SparkSQLandDataFrames.html
     // REF: https://stackoverflow.com/questions/42480770/wrting-to-hbase-maprdb-from-dataframe-in-spark-2
-    transactionRDD.foreachPartition(rdd => {
+    transactionRDD = transactionRDD.mapPartitions(rdd => {
       val config: Configuration = HBaseConfiguration.create()
       val connection: Connection = ConnectionFactory.createConnection(config)
       val table = connection.getTable(TableName.valueOf("ether_txn"))
 
 
-      rdd.foreach(line => {
+      val joinedRDD = rdd.map(line => {
+        var op = Seq("")
         val row = line.split(",")
         val receiver = row(1)
-        val index = row(4)
+        val joinIndex = row(4).toLong
 
         // REF: https://stackoverflow.com/a/21843961
         // REF: https://stackoverflow.com/q/21842469
@@ -49,7 +55,7 @@ object HbaseReadJoin {
         scan.setRowPrefixFilter(prefix)
         val resultScanner: ResultScanner = table.getScanner(scan)
         val result = resultScanner.iterator()
-        while(result.hasNext) {
+        while (result.hasNext) {
           val data = result.next()
           val id = Bytes.toString(data.getValue(Bytes.toBytes("id"), Bytes.toBytes("id")))
           val amount = Bytes.toString(data.getValue(Bytes.toBytes("amount"), Bytes.toBytes("amount")))
@@ -57,12 +63,20 @@ object HbaseReadJoin {
           val sender = Bytes.toString(data.getValue(Bytes.toBytes("sender"), Bytes.toBytes("sender")))
           val index = Bytes.toString(data.getValue(Bytes.toBytes("index"), Bytes.toBytes("index")))
 
-          println(id + " " + amount + " " + receiver + " "  + sender + " " + index)
+          if (index.toLong > joinIndex) {
+            op = op :+ line + "," + id + "," + receiver + "," + sender + "," + amount + "," + index
+          }
         }
+        op = op :+ line
+
+        op.mkString("\n")
       })
 
       table.close()
-      connection.close()
+//      connection.close()
+      joinedRDD
     })
+
+    transactionRDD.saveAsTextFile(args(1))
   }
 }

@@ -3,3 +3,4 @@ spark/graph-structure/target/
 spark/gs_output/
 spark/hbase-insert/target/
 spark/hbase-read/target/
+spark/hbr_output/
