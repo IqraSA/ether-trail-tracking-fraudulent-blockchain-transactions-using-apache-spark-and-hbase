@@ -71,12 +71,14 @@ object HbaseInsertTable {
         val index = row(4)
         val put = new Put(Bytes.add(Array(Bytes.toBytes(sender), Bytes.toBytes(index))))
 
-        put.addColumn(Bytes.toBytes("id"), Bytes.toBytes("id"), Bytes.toBytes(row(0)))
-        put.addColumn(Bytes.toBytes("sender"), Bytes.toBytes("sender"), Bytes.toBytes(sender))
-        put.addColumn(Bytes.toBytes("receiver"), Bytes.toBytes("receiver"), Bytes.toBytes(row(1)))
-        put.addColumn(Bytes.toBytes("amount"), Bytes.toBytes("amount"), Bytes.toBytes(row(3)))
-        put.addColumn(Bytes.toBytes("index"), Bytes.toBytes("index"), Bytes.toBytes(index))
-        mutator.mutate(put)
+        if (row(3).toLong > 0) {
+          put.addColumn(Bytes.toBytes("id"), Bytes.toBytes("id"), Bytes.toBytes(row(0)))
+          put.addColumn(Bytes.toBytes("sender"), Bytes.toBytes("sender"), Bytes.toBytes(sender))
+          put.addColumn(Bytes.toBytes("receiver"), Bytes.toBytes("receiver"), Bytes.toBytes(row(1)))
+          put.addColumn(Bytes.toBytes("amount"), Bytes.toBytes("amount"), Bytes.toBytes(row(3)))
+          put.addColumn(Bytes.toBytes("index"), Bytes.toBytes("index"), Bytes.toBytes(index))
+          mutator.mutate(put)
+        }
       })
 
       table.close()

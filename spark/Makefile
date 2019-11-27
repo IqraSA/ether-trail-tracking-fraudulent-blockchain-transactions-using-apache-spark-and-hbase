@@ -56,6 +56,9 @@ clean-local-output:
 clean-local-output-gs:
 	rm -rf ${local.gs_output}*
 
+clean-local-output-hbr:
+	rm -rf ${hbase_read_output}*
+
 start-hbase:
 	${hbase.root}/bin/start-hbase.sh
 
@@ -69,7 +72,7 @@ local-gs: jar clean-local-output-gs
 local-hbase-insert: jar
 	spark-submit --class ${hbase_insert_job.name} --master ${local.master} --name "${hbase_insert_app.name}" ${hbase_insert_jar.path} ${local.input}
 
-local-hbase-read: jar
+local-hbase-read: jar clean-local-output-hbr
 	spark-submit --class ${hbase_read_job.name} --master ${local.master} --name "${hbase_read_app.name}" ${hbase_read_jar.path} ${local.input} ${hbase_read_output}
 
 local-fc: jar clean-local-output-pr
