@@ -14,6 +14,7 @@ object GraphStructure {
     }
 
     val conf = new SparkConf()
+
     val spark = SparkSession.builder().appName("Graph Structure").config(conf).getOrCreate()
     // IMP: Required for toDS, toDF functions
     import spark.implicits._
@@ -25,7 +26,8 @@ object GraphStructure {
       .withColumnRenamed("_c3", "value_1")
       .withColumnRenamed("_c4", "index_1")
 
-    transactionDF = transactionDF.filter("value_1 != 0").select("id_1", "sender_1", "receiver_1", "value_1", "index_1").cache()
+    transactionDF = transactionDF.where(col("value_1").cast("double") > 0 && col("sender_1") != col("receiver_1")).select("id_1", "sender_1", "receiver_1", "value_1", "index_1").cache()
+
     var transactionDF2 = transactionDF
     var indexCols = Seq("index_1")
 

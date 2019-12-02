@@ -7,7 +7,7 @@ import org.apache.hadoop.hbase.filter.PrefixFilter
 import org.apache.hadoop.hbase.mapreduce.TableInputFormat
 import org.apache.hadoop.hbase.util.Bytes
 import org.apache.log4j.LogManager
-import org.apache.spark.SparkConf
+import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.SparkSession
 
 object HbaseReadJoin {
@@ -19,24 +19,25 @@ object HbaseReadJoin {
     }
 
     val conf = new SparkConf()
-    val spark = SparkSession.builder().appName("HBase Read & Join").config(conf).getOrCreate()
-
+//    val spark = SparkSession.builder().appName("HBase Read & Join").config(conf).getOrCreate()
+//    import spark.implicits._
+    conf.setAppName("HBase Read & Join")
+    val sc = new SparkContext(conf)
     // REF: https://stackoverflow.com/a/3870987
     val config: Configuration = HBaseConfiguration.create()
     config.set(TableInputFormat.INPUT_TABLE, "ether_txn")
 
-    var transactionRDD = spark.sparkContext.textFile(args(0))
+    var transactionRDD = sc.textFile(args(0))
         .filter(line => {
           val row = line.split(",")
-          row(3).toLong != 0
+          row(3).toDouble > 0 && row(1) != row(2)
         })
-
 
 
     // REF: https://mapr.com/docs/52/Spark/SparkSQLandDataFrames.html
     // REF: https://stackoverflow.com/questions/42480770/wrting-to-hbase-maprdb-from-dataframe-in-spark-2
-    var receiverKeyBroadcast = spark.sparkContext.broadcast(Array(0, 0, 1, 6, 11, 16))
-    var joinIndexKeyBroadcast = spark.sparkContext.broadcast(Array(0, 0, 4, 9, 14, 19))
+    var receiverKeyBroadcast = sc.broadcast(Array(0, 0, 1, 6, 11, 16))
+    var joinIndexKeyBroadcast = sc.broadcast(Array(0, 0, 4, 9, 14, 19))
 
     for (i <- 2 to 5) {
       transactionRDD = transactionRDD.mapPartitions(rdd => {
@@ -84,11 +85,12 @@ object HbaseReadJoin {
         })
 
         table.close()
-        //      connection.close()
+        connection.close()
         joinedRDD
       })
     }
 
     transactionRDD.saveAsTextFile(args(1))
+//    transactionRDD.toDF().write.csv(args(1))
   }
 }

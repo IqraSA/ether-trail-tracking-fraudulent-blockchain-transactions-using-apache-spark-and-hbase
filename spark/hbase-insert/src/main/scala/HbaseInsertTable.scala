@@ -51,10 +51,16 @@ object HbaseInsertTable {
           .setColumnFamily(ColumnFamilyDescriptorBuilder.newBuilder("index".getBytes).build())
           .build()
 //     Uncomment the below line if table is not present in HBase
-//      admin.createTable(tableDesc)
+      admin.createTable(tableDesc)
 //    }
 
     val transactionRDD = spark.sparkContext.textFile(args(0))
+      .filter(line => {
+        val row = line.split(",")
+        row(3).toDouble > 0 && row(1) != row(2)
+      })
+
+    transactionRDD.saveAsTextFile("op")
 
 //    // REF: https://mapr.com/docs/52/Spark/SparkSQLandDataFrames.html
     // REF: https://stackoverflow.com/questions/42480770/wrting-to-hbase-maprdb-from-dataframe-in-spark-2
@@ -68,23 +74,22 @@ object HbaseInsertTable {
       rdd.foreach(line => {
         val row = line.split(",")
         val sender = row(2)
+        val receiver = row(1)
         val index = row(4)
-        val put = new Put(Bytes.add(Array(Bytes.toBytes(sender), Bytes.toBytes(index))))
 
-        if (row(3).toLong > 0) {
-          put.addColumn(Bytes.toBytes("id"), Bytes.toBytes("id"), Bytes.toBytes(row(0)))
-          put.addColumn(Bytes.toBytes("sender"), Bytes.toBytes("sender"), Bytes.toBytes(sender))
-          put.addColumn(Bytes.toBytes("receiver"), Bytes.toBytes("receiver"), Bytes.toBytes(row(1)))
-          put.addColumn(Bytes.toBytes("amount"), Bytes.toBytes("amount"), Bytes.toBytes(row(3)))
-          put.addColumn(Bytes.toBytes("index"), Bytes.toBytes("index"), Bytes.toBytes(index))
-          mutator.mutate(put)
-        }
+        val put = new Put(Bytes.add(Array(Bytes.toBytes(sender), Bytes.toBytes(index))))
+        put.addColumn(Bytes.toBytes("id"), Bytes.toBytes("id"), Bytes.toBytes(row(0)))
+        put.addColumn(Bytes.toBytes("sender"), Bytes.toBytes("sender"), Bytes.toBytes(sender))
+        put.addColumn(Bytes.toBytes("receiver"), Bytes.toBytes("receiver"), Bytes.toBytes(receiver))
+        put.addColumn(Bytes.toBytes("amount"), Bytes.toBytes("amount"), Bytes.toBytes(row(3)))
+        put.addColumn(Bytes.toBytes("index"), Bytes.toBytes("index"), Bytes.toBytes(index))
+        mutator.mutate(put)
       })
 
       table.close()
       mutator.flush()
       mutator.close()
-      connection.close()
+//      connection.close()
     })
   }
 }
