@@ -1,0 +1,591 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mnt/yarn/usercache/hadoop/filecache/10/__spark_libs__5530506112107233612.zip/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+19/12/02 15:23:55 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 8827@ip-172-31-84-91
+19/12/02 15:23:55 INFO SignalUtils: Registered signal handler for TERM
+19/12/02 15:23:55 INFO SignalUtils: Registered signal handler for HUP
+19/12/02 15:23:55 INFO SignalUtils: Registered signal handler for INT
+19/12/02 15:23:57 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/12/02 15:23:57 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/12/02 15:23:57 INFO SecurityManager: Changing view acls groups to: 
+19/12/02 15:23:57 INFO SecurityManager: Changing modify acls groups to: 
+19/12/02 15:23:57 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/12/02 15:23:58 INFO TransportClientFactory: Successfully created connection to ip-172-31-90-103.ec2.internal/172.31.90.103:38665 after 140 ms (0 ms spent in bootstraps)
+19/12/02 15:23:58 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/12/02 15:23:58 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/12/02 15:23:58 INFO SecurityManager: Changing view acls groups to: 
+19/12/02 15:23:58 INFO SecurityManager: Changing modify acls groups to: 
+19/12/02 15:23:58 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/12/02 15:23:58 INFO TransportClientFactory: Successfully created connection to ip-172-31-90-103.ec2.internal/172.31.90.103:38665 after 2 ms (0 ms spent in bootstraps)
+19/12/02 15:23:58 INFO DiskBlockManager: Created local directory at /mnt/yarn/usercache/hadoop/appcache/application_1575300119626_0001/blockmgr-d0307e0f-7764-4391-a785-ced71f01f560
+19/12/02 15:23:58 INFO MemoryStore: MemoryStore started with capacity 2.3 GB
+19/12/02 15:23:59 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@ip-172-31-90-103.ec2.internal:38665
+19/12/02 15:23:59 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+19/12/02 15:23:59 INFO Executor: Starting executor ID 6 on host ip-172-31-84-91.ec2.internal
+19/12/02 15:23:59 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33819.
+19/12/02 15:23:59 INFO NettyBlockTransferService: Server created on ip-172-31-84-91.ec2.internal:33819
+19/12/02 15:23:59 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+19/12/02 15:23:59 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(6, ip-172-31-84-91.ec2.internal, 33819, None)
+19/12/02 15:23:59 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(6, ip-172-31-84-91.ec2.internal, 33819, None)
+19/12/02 15:23:59 INFO BlockManager: external shuffle service port = 7337
+19/12/02 15:23:59 INFO BlockManager: Registering executor with local external shuffle service.
+19/12/02 15:23:59 INFO TransportClientFactory: Successfully created connection to ip-172-31-84-91.ec2.internal/172.31.84.91:7337 after 9 ms (0 ms spent in bootstraps)
+19/12/02 15:23:59 INFO BlockManager: Initialized BlockManager: BlockManagerId(6, ip-172-31-84-91.ec2.internal, 33819, None)
+19/12/02 15:23:59 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+19/12/02 15:23:59 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+19/12/02 15:23:59 INFO TorrentBroadcast: Started reading broadcast variable 1
+19/12/02 15:23:59 INFO TransportClientFactory: Successfully created connection to ip-172-31-90-103.ec2.internal/172.31.90.103:45999 after 6 ms (0 ms spent in bootstraps)
+19/12/02 15:23:59 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 4.5 KB, free 2.3 GB)
+19/12/02 15:24:00 INFO TorrentBroadcast: Reading broadcast variable 1 took 215 ms
+19/12/02 15:24:00 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 8.8 KB, free 2.3 GB)
+19/12/02 15:24:00 INFO CodeGenerator: Code generated in 395.363777 ms
+19/12/02 15:24:00 INFO FileScanRDD: Reading File path: s3://sidharth-cs6240/input_project/input04.txt, range: 0-11801527, partition values: [empty row]
+19/12/02 15:24:01 INFO CodeGenerator: Code generated in 18.334671 ms
+19/12/02 15:24:01 INFO TorrentBroadcast: Started reading broadcast variable 0
+19/12/02 15:24:01 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 36.8 KB, free 2.3 GB)
+19/12/02 15:24:01 INFO TorrentBroadcast: Reading broadcast variable 0 took 12 ms
+19/12/02 15:24:01 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 576.7 KB, free 2.3 GB)
+19/12/02 15:24:04 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input_project/input04.txt' for reading
+19/12/02 15:24:04 INFO GPLNativeCodeLoader: Loaded native gpl library
+19/12/02 15:24:04 INFO LzoCodec: Successfully loaded & initialized native-lzo library [hadoop-lzo rev 7e6c862e89bc8db32c064454a55af74ddff73bae]
+19/12/02 15:24:04 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1528 bytes result sent to driver
+19/12/02 15:24:08 INFO CoarseGrainedExecutorBackend: Got assigned task 8
+19/12/02 15:24:08 INFO Executor: Running task 7.0 in stage 1.0 (TID 8)
+19/12/02 15:24:08 INFO TorrentBroadcast: Started reading broadcast variable 4
+19/12/02 15:24:08 INFO CoarseGrainedExecutorBackend: Got assigned task 18
+19/12/02 15:24:08 INFO Executor: Running task 6.0 in stage 2.0 (TID 18)
+19/12/02 15:24:08 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 10.4 KB, free 2.3 GB)
+19/12/02 15:24:08 INFO TorrentBroadcast: Reading broadcast variable 4 took 29 ms
+19/12/02 15:24:08 INFO CoarseGrainedExecutorBackend: Got assigned task 24
+19/12/02 15:24:08 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 23.9 KB, free 2.3 GB)
+19/12/02 15:24:08 INFO TorrentBroadcast: Started reading broadcast variable 5
+19/12/02 15:24:08 INFO CoarseGrainedExecutorBackend: Got assigned task 31
+19/12/02 15:24:08 INFO Executor: Running task 1.0 in stage 4.0 (TID 24)
+19/12/02 15:24:08 INFO Executor: Running task 8.0 in stage 4.0 (TID 31)
+19/12/02 15:24:09 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 9.7 KB, free 2.3 GB)
+19/12/02 15:24:09 INFO TorrentBroadcast: Reading broadcast variable 5 took 32 ms
+19/12/02 15:24:09 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 20.4 KB, free 2.3 GB)
+19/12/02 15:24:09 INFO TorrentBroadcast: Started reading broadcast variable 6
+19/12/02 15:24:09 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 10.4 KB, free 2.3 GB)
+19/12/02 15:24:09 INFO TorrentBroadcast: Reading broadcast variable 6 took 32 ms
+19/12/02 15:24:09 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 23.9 KB, free 2.3 GB)
+19/12/02 15:24:09 INFO CodeGenerator: Code generated in 80.124794 ms
+19/12/02 15:24:09 INFO FileScanRDD: Reading File path: s3://sidharth-cs6240/input_project/input04.txt, range: 4194304-8388608, partition values: [empty row]
+19/12/02 15:24:09 INFO FileScanRDD: Reading File path: s3://sidharth-cs6240/input_project/input04.txt, range: 33554432-37748736, partition values: [empty row]
+19/12/02 15:24:09 INFO FileScanRDD: Reading File path: s3://sidharth-cs6240/input_project/input04.txt, range: 29360128-33554432, partition values: [empty row]
+19/12/02 15:24:09 INFO FileScanRDD: Reading File path: s3://sidharth-cs6240/input_project/input04.txt, range: 25165824-29360128, partition values: [empty row]
+19/12/02 15:24:09 INFO CodeGenerator: Code generated in 69.922936 ms
+19/12/02 15:24:09 INFO TorrentBroadcast: Started reading broadcast variable 3
+19/12/02 15:24:09 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 36.8 KB, free 2.3 GB)
+19/12/02 15:24:09 INFO TorrentBroadcast: Reading broadcast variable 3 took 20 ms
+19/12/02 15:24:09 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 576.7 KB, free 2.3 GB)
+19/12/02 15:24:09 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input_project/input04.txt' for reading
+19/12/02 15:24:09 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input_project/input04.txt' for reading
+19/12/02 15:24:09 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input_project/input04.txt' for reading
+19/12/02 15:24:09 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input_project/input04.txt' for reading
+19/12/02 15:24:12 INFO MemoryStore: Block rdd_11_1 stored as values in memory (estimated size 1182.5 KB, free 2.3 GB)
+19/12/02 15:24:12 INFO MemoryStore: Block rdd_11_8 stored as values in memory (estimated size 1388.5 KB, free 2.3 GB)
+19/12/02 15:24:12 INFO MemoryStore: Block rdd_11_6 stored as values in memory (estimated size 1176.0 KB, free 2.3 GB)
+19/12/02 15:24:12 INFO CodeGenerator: Code generated in 12.892993 ms
+19/12/02 15:24:12 INFO MemoryStore: Block rdd_11_7 stored as values in memory (estimated size 1261.6 KB, free 2.3 GB)
+19/12/02 15:24:12 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#149) generates partition filter: ((sender_1.count#538 - sender_1.nullCount#537) > 0)
+19/12/02 15:24:12 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#149) generates partition filter: ((sender_1.count#538 - sender_1.nullCount#537) > 0)
+19/12/02 15:24:12 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#89) generates partition filter: ((sender_1.count#513 - sender_1.nullCount#512) > 0)
+19/12/02 15:24:12 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#80) generates partition filter: ((index_1.count#528 - index_1.nullCount#527) > 0)
+19/12/02 15:24:12 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#140) generates partition filter: ((index_1.count#553 - index_1.nullCount#552) > 0)
+19/12/02 15:24:12 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#140) generates partition filter: ((index_1.count#553 - index_1.nullCount#552) > 0)
+19/12/02 15:24:12 INFO CodeGenerator: Code generated in 141.107877 ms
+19/12/02 15:24:12 INFO CodeGenerator: Code generated in 46.369341 ms
+19/12/02 15:24:12 INFO CodeGenerator: Code generated in 50.030271 ms
+19/12/02 15:24:12 INFO CodeGenerator: Code generated in 58.97968 ms
+19/12/02 15:24:12 INFO CodeGenerator: Code generated in 38.198277 ms
+19/12/02 15:24:12 INFO CodeGenerator: Code generated in 70.792778 ms
+19/12/02 15:24:13 INFO Executor: Finished task 6.0 in stage 2.0 (TID 18). 1944 bytes result sent to driver
+19/12/02 15:24:13 INFO Executor: Finished task 1.0 in stage 4.0 (TID 24). 2096 bytes result sent to driver
+19/12/02 15:24:13 INFO CoarseGrainedExecutorBackend: Got assigned task 37
+19/12/02 15:24:13 INFO CoarseGrainedExecutorBackend: Got assigned task 38
+19/12/02 15:24:13 INFO Executor: Running task 4.0 in stage 6.0 (TID 38)
+19/12/02 15:24:13 INFO TorrentBroadcast: Started reading broadcast variable 7
+19/12/02 15:24:13 INFO Executor: Finished task 7.0 in stage 1.0 (TID 8). 2139 bytes result sent to driver
+19/12/02 15:24:13 INFO Executor: Running task 3.0 in stage 6.0 (TID 37)
+19/12/02 15:24:13 INFO Executor: Finished task 8.0 in stage 4.0 (TID 31). 2096 bytes result sent to driver
+19/12/02 15:24:13 INFO CoarseGrainedExecutorBackend: Got assigned task 39
+19/12/02 15:24:13 INFO Executor: Running task 5.0 in stage 6.0 (TID 39)
+19/12/02 15:24:13 INFO CoarseGrainedExecutorBackend: Got assigned task 40
+19/12/02 15:24:13 INFO Executor: Running task 6.0 in stage 6.0 (TID 40)
+19/12/02 15:24:13 INFO TransportClientFactory: Successfully created connection to ip-172-31-89-95.ec2.internal/172.31.89.95:33139 after 16 ms (0 ms spent in bootstraps)
+19/12/02 15:24:13 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 10.4 KB, free 2.3 GB)
+19/12/02 15:24:13 INFO TorrentBroadcast: Reading broadcast variable 7 took 63 ms
+19/12/02 15:24:13 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 23.9 KB, free 2.3 GB)
+19/12/02 15:24:13 INFO FileScanRDD: Reading File path: s3://sidharth-cs6240/input_project/input04.txt, range: 12582912-16777216, partition values: [empty row]
+19/12/02 15:24:13 INFO FileScanRDD: Reading File path: s3://sidharth-cs6240/input_project/input04.txt, range: 20971520-25165824, partition values: [empty row]
+19/12/02 15:24:13 INFO BlockManager: Found block rdd_11_6 locally
+19/12/02 15:24:13 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#229) generates partition filter: ((sender_1.count#563 - sender_1.nullCount#562) > 0)
+19/12/02 15:24:13 INFO FileScanRDD: Reading File path: s3://sidharth-cs6240/input_project/input04.txt, range: 16777216-20971520, partition values: [empty row]
+19/12/02 15:24:13 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#220) generates partition filter: ((index_1.count#578 - index_1.nullCount#577) > 0)
+19/12/02 15:24:13 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input_project/input04.txt' for reading
+19/12/02 15:24:13 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input_project/input04.txt' for reading
+19/12/02 15:24:13 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input_project/input04.txt' for reading
+19/12/02 15:24:13 INFO CodeGenerator: Code generated in 87.711804 ms
+19/12/02 15:24:13 INFO Executor: Finished task 6.0 in stage 6.0 (TID 40). 2139 bytes result sent to driver
+19/12/02 15:24:13 INFO CoarseGrainedExecutorBackend: Got assigned task 41
+19/12/02 15:24:13 INFO Executor: Running task 7.0 in stage 6.0 (TID 41)
+19/12/02 15:24:13 INFO BlockManager: Found block rdd_11_7 locally
+19/12/02 15:24:13 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#229) generates partition filter: ((sender_1.count#563 - sender_1.nullCount#562) > 0)
+19/12/02 15:24:13 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#220) generates partition filter: ((index_1.count#578 - index_1.nullCount#577) > 0)
+19/12/02 15:24:14 INFO Executor: Finished task 7.0 in stage 6.0 (TID 41). 2096 bytes result sent to driver
+19/12/02 15:24:14 INFO CoarseGrainedExecutorBackend: Got assigned task 42
+19/12/02 15:24:14 INFO Executor: Running task 8.0 in stage 6.0 (TID 42)
+19/12/02 15:24:14 INFO BlockManager: Found block rdd_11_8 locally
+19/12/02 15:24:14 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#229) generates partition filter: ((sender_1.count#563 - sender_1.nullCount#562) > 0)
+19/12/02 15:24:14 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#220) generates partition filter: ((index_1.count#578 - index_1.nullCount#577) > 0)
+19/12/02 15:24:14 INFO Executor: Finished task 8.0 in stage 6.0 (TID 42). 2096 bytes result sent to driver
+19/12/02 15:24:14 INFO CoarseGrainedExecutorBackend: Got assigned task 43
+19/12/02 15:24:14 INFO Executor: Running task 9.0 in stage 6.0 (TID 43)
+19/12/02 15:24:14 INFO FileScanRDD: Reading File path: s3://sidharth-cs6240/input_project/input04.txt, range: 37748736-41943040, partition values: [empty row]
+19/12/02 15:24:14 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input_project/input04.txt' for reading
+19/12/02 15:24:15 INFO MemoryStore: Block rdd_11_5 stored as values in memory (estimated size 1261.5 KB, free 2.3 GB)
+19/12/02 15:24:15 INFO MemoryStore: Block rdd_11_4 stored as values in memory (estimated size 1150.0 KB, free 2.3 GB)
+19/12/02 15:24:15 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#229) generates partition filter: ((sender_1.count#563 - sender_1.nullCount#562) > 0)
+19/12/02 15:24:15 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#220) generates partition filter: ((index_1.count#578 - index_1.nullCount#577) > 0)
+19/12/02 15:24:15 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#229) generates partition filter: ((sender_1.count#563 - sender_1.nullCount#562) > 0)
+19/12/02 15:24:15 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#220) generates partition filter: ((index_1.count#578 - index_1.nullCount#577) > 0)
+19/12/02 15:24:15 INFO MemoryStore: Block rdd_11_3 stored as values in memory (estimated size 1208.6 KB, free 2.3 GB)
+19/12/02 15:24:15 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#229) generates partition filter: ((sender_1.count#563 - sender_1.nullCount#562) > 0)
+19/12/02 15:24:15 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#220) generates partition filter: ((index_1.count#578 - index_1.nullCount#577) > 0)
+19/12/02 15:24:15 INFO Executor: Finished task 5.0 in stage 6.0 (TID 39). 2096 bytes result sent to driver
+19/12/02 15:24:15 INFO Executor: Finished task 4.0 in stage 6.0 (TID 38). 2096 bytes result sent to driver
+19/12/02 15:24:15 INFO CoarseGrainedExecutorBackend: Got assigned task 44
+19/12/02 15:24:15 INFO Executor: Running task 10.0 in stage 6.0 (TID 44)
+19/12/02 15:24:15 INFO CoarseGrainedExecutorBackend: Got assigned task 45
+19/12/02 15:24:15 INFO Executor: Running task 0.0 in stage 8.0 (TID 45)
+19/12/02 15:24:15 INFO TorrentBroadcast: Started reading broadcast variable 8
+19/12/02 15:24:15 INFO FileScanRDD: Reading File path: s3://sidharth-cs6240/input_project/input04.txt, range: 41943040-43011807, partition values: [empty row]
+19/12/02 15:24:15 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 10.4 KB, free 2.3 GB)
+19/12/02 15:24:15 INFO TorrentBroadcast: Reading broadcast variable 8 took 31 ms
+19/12/02 15:24:15 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 23.9 KB, free 2.3 GB)
+19/12/02 15:24:15 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input_project/input04.txt' for reading
+19/12/02 15:24:15 INFO FileScanRDD: Reading File path: s3://sidharth-cs6240/input_project/input04.txt, range: 0-4194304, partition values: [empty row]
+19/12/02 15:24:15 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input_project/input04.txt' for reading
+19/12/02 15:24:15 INFO Executor: Finished task 3.0 in stage 6.0 (TID 37). 2096 bytes result sent to driver
+19/12/02 15:24:15 INFO CoarseGrainedExecutorBackend: Got assigned task 46
+19/12/02 15:24:15 INFO Executor: Running task 1.0 in stage 8.0 (TID 46)
+19/12/02 15:24:15 INFO BlockManager: Found block rdd_11_1 locally
+19/12/02 15:24:15 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#329) generates partition filter: ((sender_1.count#588 - sender_1.nullCount#587) > 0)
+19/12/02 15:24:15 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#320) generates partition filter: ((index_1.count#603 - index_1.nullCount#602) > 0)
+19/12/02 15:24:15 INFO CodeGenerator: Code generated in 38.397813 ms
+19/12/02 15:24:16 INFO Executor: Finished task 1.0 in stage 8.0 (TID 46). 2096 bytes result sent to driver
+19/12/02 15:24:16 INFO CoarseGrainedExecutorBackend: Got assigned task 47
+19/12/02 15:24:16 INFO Executor: Running task 2.0 in stage 8.0 (TID 47)
+19/12/02 15:24:16 INFO FileScanRDD: Reading File path: s3://sidharth-cs6240/input_project/input04.txt, range: 8388608-12582912, partition values: [empty row]
+19/12/02 15:24:16 INFO MemoryStore: Block rdd_11_10 stored as values in memory (estimated size 354.9 KB, free 2.3 GB)
+19/12/02 15:24:16 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#229) generates partition filter: ((sender_1.count#563 - sender_1.nullCount#562) > 0)
+19/12/02 15:24:16 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#220) generates partition filter: ((index_1.count#578 - index_1.nullCount#577) > 0)
+19/12/02 15:24:16 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input_project/input04.txt' for reading
+19/12/02 15:24:16 INFO MemoryStore: Block rdd_11_9 stored as values in memory (estimated size 1572.2 KB, free 2.3 GB)
+19/12/02 15:24:16 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#229) generates partition filter: ((sender_1.count#563 - sender_1.nullCount#562) > 0)
+19/12/02 15:24:16 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#220) generates partition filter: ((index_1.count#578 - index_1.nullCount#577) > 0)
+19/12/02 15:24:16 INFO Executor: Finished task 10.0 in stage 6.0 (TID 44). 2096 bytes result sent to driver
+19/12/02 15:24:16 INFO CoarseGrainedExecutorBackend: Got assigned task 48
+19/12/02 15:24:16 INFO Executor: Running task 3.0 in stage 8.0 (TID 48)
+19/12/02 15:24:16 INFO BlockManager: Found block rdd_11_3 locally
+19/12/02 15:24:16 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#329) generates partition filter: ((sender_1.count#588 - sender_1.nullCount#587) > 0)
+19/12/02 15:24:16 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#320) generates partition filter: ((index_1.count#603 - index_1.nullCount#602) > 0)
+19/12/02 15:24:16 INFO Executor: Finished task 9.0 in stage 6.0 (TID 43). 2096 bytes result sent to driver
+19/12/02 15:24:16 INFO CoarseGrainedExecutorBackend: Got assigned task 49
+19/12/02 15:24:16 INFO Executor: Running task 4.0 in stage 8.0 (TID 49)
+19/12/02 15:24:16 INFO BlockManager: Found block rdd_11_4 locally
+19/12/02 15:24:16 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#329) generates partition filter: ((sender_1.count#588 - sender_1.nullCount#587) > 0)
+19/12/02 15:24:16 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#320) generates partition filter: ((index_1.count#603 - index_1.nullCount#602) > 0)
+19/12/02 15:24:16 INFO Executor: Finished task 3.0 in stage 8.0 (TID 48). 2096 bytes result sent to driver
+19/12/02 15:24:16 INFO CoarseGrainedExecutorBackend: Got assigned task 50
+19/12/02 15:24:16 INFO Executor: Running task 5.0 in stage 8.0 (TID 50)
+19/12/02 15:24:16 INFO BlockManager: Found block rdd_11_5 locally
+19/12/02 15:24:16 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#329) generates partition filter: ((sender_1.count#588 - sender_1.nullCount#587) > 0)
+19/12/02 15:24:16 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#320) generates partition filter: ((index_1.count#603 - index_1.nullCount#602) > 0)
+19/12/02 15:24:16 INFO Executor: Finished task 4.0 in stage 8.0 (TID 49). 2096 bytes result sent to driver
+19/12/02 15:24:17 INFO CoarseGrainedExecutorBackend: Got assigned task 51
+19/12/02 15:24:17 INFO Executor: Running task 6.0 in stage 8.0 (TID 51)
+19/12/02 15:24:17 INFO BlockManager: Found block rdd_11_6 locally
+19/12/02 15:24:17 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#329) generates partition filter: ((sender_1.count#588 - sender_1.nullCount#587) > 0)
+19/12/02 15:24:17 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#320) generates partition filter: ((index_1.count#603 - index_1.nullCount#602) > 0)
+19/12/02 15:24:17 INFO Executor: Finished task 5.0 in stage 8.0 (TID 50). 2096 bytes result sent to driver
+19/12/02 15:24:17 INFO CoarseGrainedExecutorBackend: Got assigned task 52
+19/12/02 15:24:17 INFO Executor: Running task 7.0 in stage 8.0 (TID 52)
+19/12/02 15:24:17 INFO BlockManager: Found block rdd_11_7 locally
+19/12/02 15:24:17 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#329) generates partition filter: ((sender_1.count#588 - sender_1.nullCount#587) > 0)
+19/12/02 15:24:17 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#320) generates partition filter: ((index_1.count#603 - index_1.nullCount#602) > 0)
+19/12/02 15:24:17 INFO Executor: Finished task 6.0 in stage 8.0 (TID 51). 2096 bytes result sent to driver
+19/12/02 15:24:17 INFO CoarseGrainedExecutorBackend: Got assigned task 53
+19/12/02 15:24:17 INFO Executor: Running task 8.0 in stage 8.0 (TID 53)
+19/12/02 15:24:17 INFO BlockManager: Found block rdd_11_8 locally
+19/12/02 15:24:17 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#329) generates partition filter: ((sender_1.count#588 - sender_1.nullCount#587) > 0)
+19/12/02 15:24:17 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#320) generates partition filter: ((index_1.count#603 - index_1.nullCount#602) > 0)
+19/12/02 15:24:17 INFO MemoryStore: Block rdd_11_0 stored as values in memory (estimated size 1160.4 KB, free 2.3 GB)
+19/12/02 15:24:17 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#329) generates partition filter: ((sender_1.count#588 - sender_1.nullCount#587) > 0)
+19/12/02 15:24:17 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#320) generates partition filter: ((index_1.count#603 - index_1.nullCount#602) > 0)
+19/12/02 15:24:17 INFO Executor: Finished task 7.0 in stage 8.0 (TID 52). 2096 bytes result sent to driver
+19/12/02 15:24:17 INFO Executor: Finished task 8.0 in stage 8.0 (TID 53). 2096 bytes result sent to driver
+19/12/02 15:24:17 INFO Executor: Finished task 0.0 in stage 8.0 (TID 45). 2096 bytes result sent to driver
+19/12/02 15:24:17 INFO MemoryStore: Block rdd_11_2 stored as values in memory (estimated size 1600.6 KB, free 2.3 GB)
+19/12/02 15:24:17 INFO InMemoryTableScanExec: Predicate isnotnull(sender_1#329) generates partition filter: ((sender_1.count#588 - sender_1.nullCount#587) > 0)
+19/12/02 15:24:17 INFO InMemoryTableScanExec: Predicate isnotnull(index_1#320) generates partition filter: ((index_1.count#603 - index_1.nullCount#602) > 0)
+19/12/02 15:24:17 INFO Executor: Finished task 2.0 in stage 8.0 (TID 47). 2096 bytes result sent to driver
+19/12/02 15:24:19 INFO CoarseGrainedExecutorBackend: Got assigned task 64
+19/12/02 15:24:19 INFO Executor: Running task 30.0 in stage 3.0 (TID 64)
+19/12/02 15:24:19 INFO CoarseGrainedExecutorBackend: Got assigned task 73
+19/12/02 15:24:19 INFO Executor: Running task 87.0 in stage 3.0 (TID 73)
+19/12/02 15:24:19 INFO CoarseGrainedExecutorBackend: Got assigned task 88
+19/12/02 15:24:19 INFO CoarseGrainedExecutorBackend: Got assigned task 91
+19/12/02 15:24:19 INFO Executor: Running task 10.0 in stage 3.0 (TID 88)
+19/12/02 15:24:19 INFO Executor: Running task 24.0 in stage 3.0 (TID 91)
+19/12/02 15:24:19 INFO MapOutputTrackerWorker: Updating epoch to 4 and clearing cache
+19/12/02 15:24:19 INFO TorrentBroadcast: Started reading broadcast variable 9
+19/12/02 15:24:19 INFO TransportClientFactory: Successfully created connection to ip-172-31-85-98.ec2.internal/172.31.85.98:46595 after 2 ms (0 ms spent in bootstraps)
+19/12/02 15:24:19 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 17.3 KB, free 2.3 GB)
+19/12/02 15:24:19 INFO TorrentBroadcast: Reading broadcast variable 9 took 212 ms
+19/12/02 15:24:19 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 41.9 KB, free 2.3 GB)
+19/12/02 15:24:19 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+19/12/02 15:24:19 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@ip-172-31-90-103.ec2.internal:38665)
+19/12/02 15:24:19 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+19/12/02 15:24:19 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+19/12/02 15:24:19 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+19/12/02 15:24:19 INFO MapOutputTrackerWorker: Got the output locations
+19/12/02 15:24:19 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:19 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:19 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:19 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:19 INFO TransportClientFactory: Successfully created connection to ip-172-31-82-89.ec2.internal/172.31.82.89:7337 after 32 ms (0 ms spent in bootstraps)
+19/12/02 15:24:19 INFO TransportClientFactory: Successfully created connection to ip-172-31-81-214.ec2.internal/172.31.81.214:7337 after 26 ms (0 ms spent in bootstraps)
+19/12/02 15:24:19 INFO TransportClientFactory: Successfully created connection to ip-172-31-80-210.ec2.internal/172.31.80.210:7337 after 34 ms (0 ms spent in bootstraps)
+19/12/02 15:24:19 INFO TransportClientFactory: Successfully created connection to ip-172-31-88-47.ec2.internal/172.31.88.47:7337 after 39 ms (0 ms spent in bootstraps)
+19/12/02 15:24:19 INFO TransportClientFactory: Successfully created connection to ip-172-31-85-98.ec2.internal/172.31.85.98:7337 after 4 ms (0 ms spent in bootstraps)
+19/12/02 15:24:19 INFO TransportClientFactory: Successfully created connection to ip-172-31-89-95.ec2.internal/172.31.89.95:7337 after 50 ms (0 ms spent in bootstraps)
+19/12/02 15:24:19 INFO TransportClientFactory: Successfully created connection to ip-172-31-86-39.ec2.internal/172.31.86.39:7337 after 102 ms (0 ms spent in bootstraps)
+19/12/02 15:24:19 INFO TransportClientFactory: Successfully created connection to ip-172-31-82-112.ec2.internal/172.31.82.112:7337 after 104 ms (0 ms spent in bootstraps)
+19/12/02 15:24:19 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 312 ms
+19/12/02 15:24:19 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 319 ms
+19/12/02 15:24:19 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 330 ms
+19/12/02 15:24:19 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 259 ms
+19/12/02 15:24:19 INFO CodeGenerator: Code generated in 54.59795 ms
+19/12/02 15:24:19 INFO CodeGenerator: Code generated in 23.580544 ms
+19/12/02 15:24:19 INFO CodeGenerator: Code generated in 54.974872 ms
+19/12/02 15:24:20 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+19/12/02 15:24:20 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+19/12/02 15:24:20 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@ip-172-31-90-103.ec2.internal:38665)
+19/12/02 15:24:20 INFO MapOutputTrackerWorker: Got the output locations
+19/12/02 15:24:20 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:20 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:20 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 3 ms
+19/12/02 15:24:20 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:20 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:20 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 9 ms
+19/12/02 15:24:20 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 24 ms
+19/12/02 15:24:20 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 10 ms
+19/12/02 15:24:20 INFO CodeGenerator: Code generated in 81.434832 ms
+19/12/02 15:24:20 INFO CodeGenerator: Code generated in 14.482953 ms
+19/12/02 15:24:20 INFO CodeGenerator: Code generated in 48.004145 ms
+19/12/02 15:24:20 INFO CodeGenerator: Code generated in 73.461552 ms
+19/12/02 15:24:20 INFO CodeGenerator: Code generated in 47.253204 ms
+19/12/02 15:24:21 INFO Executor: Finished task 10.0 in stage 3.0 (TID 88). 3573 bytes result sent to driver
+19/12/02 15:24:21 INFO CoarseGrainedExecutorBackend: Got assigned task 117
+19/12/02 15:24:21 INFO Executor: Running task 96.0 in stage 3.0 (TID 117)
+19/12/02 15:24:21 INFO Executor: Finished task 24.0 in stage 3.0 (TID 91). 3616 bytes result sent to driver
+19/12/02 15:24:21 INFO CoarseGrainedExecutorBackend: Got assigned task 119
+19/12/02 15:24:21 INFO Executor: Running task 106.0 in stage 3.0 (TID 119)
+19/12/02 15:24:21 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:21 INFO Executor: Finished task 87.0 in stage 3.0 (TID 73). 3573 bytes result sent to driver
+19/12/02 15:24:21 INFO CoarseGrainedExecutorBackend: Got assigned task 122
+19/12/02 15:24:21 INFO Executor: Running task 122.0 in stage 3.0 (TID 122)
+19/12/02 15:24:21 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 31 ms
+19/12/02 15:24:21 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:21 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 11 ms
+19/12/02 15:24:21 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:21 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 3 ms
+19/12/02 15:24:21 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:21 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:21 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 4 ms
+19/12/02 15:24:21 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 8 ms
+19/12/02 15:24:21 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 1 local blocks and 10 remote blocks
+19/12/02 15:24:21 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 2 ms
+19/12/02 15:24:21 INFO Executor: Finished task 96.0 in stage 3.0 (TID 117). 3616 bytes result sent to driver
+19/12/02 15:24:21 INFO Executor: Finished task 122.0 in stage 3.0 (TID 122). 3573 bytes result sent to driver
+19/12/02 15:24:21 INFO Executor: Finished task 106.0 in stage 3.0 (TID 119). 3573 bytes result sent to driver
+19/12/02 15:24:21 INFO Executor: Finished task 30.0 in stage 3.0 (TID 64). 3573 bytes result sent to driver
+19/12/02 15:24:31 INFO CoarseGrainedExecutorBackend: Got assigned task 257
+19/12/02 15:24:31 INFO CoarseGrainedExecutorBackend: Got assigned task 264
+19/12/02 15:24:31 INFO Executor: Running task 90.0 in stage 5.0 (TID 257)
+19/12/02 15:24:31 INFO Executor: Running task 101.0 in stage 5.0 (TID 264)
+19/12/02 15:24:31 INFO MapOutputTrackerWorker: Updating epoch to 6 and clearing cache
+19/12/02 15:24:31 INFO TorrentBroadcast: Started reading broadcast variable 10
+19/12/02 15:24:31 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 21.6 KB, free 2.3 GB)
+19/12/02 15:24:31 INFO TorrentBroadcast: Reading broadcast variable 10 took 21 ms
+19/12/02 15:24:31 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 51.5 KB, free 2.3 GB)
+19/12/02 15:24:31 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 2, fetching them
+19/12/02 15:24:31 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@ip-172-31-90-103.ec2.internal:38665)
+19/12/02 15:24:31 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 2, fetching them
+19/12/02 15:24:31 INFO MapOutputTrackerWorker: Got the output locations
+19/12/02 15:24:31 INFO ShuffleBlockFetcherIterator: Getting 78 non-empty blocks including 3 local blocks and 75 remote blocks
+19/12/02 15:24:31 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 16 ms
+19/12/02 15:24:31 INFO ShuffleBlockFetcherIterator: Getting 68 non-empty blocks including 3 local blocks and 65 remote blocks
+19/12/02 15:24:31 INFO ShuffleBlockFetcherIterator: Started 8 remote fetches in 17 ms
+19/12/02 15:24:31 INFO CodeGenerator: Code generated in 74.243504 ms
+19/12/02 15:24:31 INFO CodeGenerator: Code generated in 18.863076 ms
+19/12/02 15:24:31 INFO CodeGenerator: Code generated in 31.696367 ms
+19/12/02 15:24:31 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 3, fetching them
+19/12/02 15:24:31 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@ip-172-31-90-103.ec2.internal:38665)
+19/12/02 15:24:31 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 3, fetching them
+19/12/02 15:24:31 INFO MapOutputTrackerWorker: Got the output locations
+19/12/02 15:24:31 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 2 local blocks and 9 remote blocks
+19/12/02 15:24:31 INFO ShuffleBlockFetcherIterator: Started 7 remote fetches in 3 ms
+19/12/02 15:24:31 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 2 local blocks and 9 remote blocks
+19/12/02 15:24:31 INFO ShuffleBlockFetcherIterator: Started 7 remote fetches in 12 ms
+19/12/02 15:24:31 INFO CodeGenerator: Code generated in 52.245687 ms
+19/12/02 15:24:31 INFO CodeGenerator: Code generated in 80.517858 ms
+19/12/02 15:24:31 INFO CodeGenerator: Code generated in 34.780411 ms
+19/12/02 15:24:31 INFO Executor: Finished task 90.0 in stage 5.0 (TID 257). 4944 bytes result sent to driver
+19/12/02 15:24:31 INFO Executor: Finished task 101.0 in stage 5.0 (TID 264). 4944 bytes result sent to driver
+19/12/02 15:26:45 INFO CoarseGrainedExecutorBackend: Got assigned task 670
+19/12/02 15:26:45 INFO CoarseGrainedExecutorBackend: Got assigned task 677
+19/12/02 15:26:45 INFO CoarseGrainedExecutorBackend: Got assigned task 684
+19/12/02 15:26:45 INFO CoarseGrainedExecutorBackend: Got assigned task 691
+19/12/02 15:26:45 INFO Executor: Running task 19.0 in stage 9.0 (TID 677)
+19/12/02 15:26:45 INFO MapOutputTrackerWorker: Updating epoch to 8 and clearing cache
+19/12/02 15:26:45 INFO Executor: Running task 26.0 in stage 9.0 (TID 684)
+19/12/02 15:26:45 INFO TorrentBroadcast: Started reading broadcast variable 12
+19/12/02 15:26:45 INFO Executor: Running task 33.0 in stage 9.0 (TID 691)
+19/12/02 15:26:45 INFO Executor: Running task 12.0 in stage 9.0 (TID 670)
+19/12/02 15:26:45 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 101.6 KB, free 2.3 GB)
+19/12/02 15:26:45 INFO TorrentBroadcast: Reading broadcast variable 12 took 18 ms
+19/12/02 15:26:45 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 324.6 KB, free 2.3 GB)
+19/12/02 15:26:45 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 6, fetching them
+19/12/02 15:26:45 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@ip-172-31-90-103.ec2.internal:38665)
+19/12/02 15:26:45 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 6, fetching them
+19/12/02 15:26:45 INFO MapOutputTrackerWorker: Got the output locations
+19/12/02 15:26:45 INFO ShuffleBlockFetcherIterator: Getting 52 non-empty blocks including 0 local blocks and 52 remote blocks
+19/12/02 15:26:45 INFO ShuffleBlockFetcherIterator: Getting 48 non-empty blocks including 0 local blocks and 48 remote blocks
+19/12/02 15:26:45 INFO ShuffleBlockFetcherIterator: Getting 35 non-empty blocks including 0 local blocks and 35 remote blocks
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Getting 58 non-empty blocks including 0 local blocks and 58 remote blocks
+19/12/02 15:26:46 INFO TransportClientFactory: Found inactive connection to ip-172-31-82-89.ec2.internal/172.31.82.89:7337, creating a new one.
+19/12/02 15:26:46 INFO TransportClientFactory: Found inactive connection to ip-172-31-88-47.ec2.internal/172.31.88.47:7337, creating a new one.
+19/12/02 15:26:46 INFO TransportClientFactory: Found inactive connection to ip-172-31-82-112.ec2.internal/172.31.82.112:7337, creating a new one.
+19/12/02 15:26:46 INFO TransportClientFactory: Found inactive connection to ip-172-31-81-214.ec2.internal/172.31.81.214:7337, creating a new one.
+19/12/02 15:26:46 INFO TransportClientFactory: Successfully created connection to ip-172-31-82-112.ec2.internal/172.31.82.112:7337 after 1 ms (0 ms spent in bootstraps)
+19/12/02 15:26:46 INFO TransportClientFactory: Successfully created connection to ip-172-31-81-214.ec2.internal/172.31.81.214:7337 after 1 ms (0 ms spent in bootstraps)
+19/12/02 15:26:46 INFO TransportClientFactory: Successfully created connection to ip-172-31-82-89.ec2.internal/172.31.82.89:7337 after 4 ms (0 ms spent in bootstraps)
+19/12/02 15:26:46 INFO TransportClientFactory: Successfully created connection to ip-172-31-88-47.ec2.internal/172.31.88.47:7337 after 3 ms (0 ms spent in bootstraps)
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Started 3 remote fetches in 10 ms
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Started 3 remote fetches in 16 ms
+19/12/02 15:26:46 INFO TransportClientFactory: Found inactive connection to ip-172-31-86-39.ec2.internal/172.31.86.39:7337, creating a new one.
+19/12/02 15:26:46 INFO TransportClientFactory: Successfully created connection to ip-172-31-86-39.ec2.internal/172.31.86.39:7337 after 8 ms (0 ms spent in bootstraps)
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Started 4 remote fetches in 27 ms
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Started 4 remote fetches in 27 ms
+19/12/02 15:26:46 INFO CodeGenerator: Code generated in 59.85009 ms
+19/12/02 15:26:46 INFO CodeGenerator: Code generated in 19.499902 ms
+19/12/02 15:26:46 INFO CodeGenerator: Code generated in 87.730439 ms
+19/12/02 15:26:46 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 7, fetching them
+19/12/02 15:26:46 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 7, fetching them
+19/12/02 15:26:46 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 7, fetching them
+19/12/02 15:26:46 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@ip-172-31-90-103.ec2.internal:38665)
+19/12/02 15:26:46 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 7, fetching them
+19/12/02 15:26:46 INFO MapOutputTrackerWorker: Got the output locations
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:26:46 INFO TransportClientFactory: Found inactive connection to ip-172-31-85-98.ec2.internal/172.31.85.98:7337, creating a new one.
+19/12/02 15:26:46 INFO TransportClientFactory: Successfully created connection to ip-172-31-85-98.ec2.internal/172.31.85.98:7337 after 3 ms (0 ms spent in bootstraps)
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 7 ms
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 12 ms
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 14 ms
+19/12/02 15:26:46 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 18 ms
+19/12/02 15:26:46 INFO CodeGenerator: Code generated in 66.973676 ms
+19/12/02 15:26:46 INFO CodeGenerator: Code generated in 68.132216 ms
+19/12/02 15:26:46 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:26:46 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:26:46 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:26:46 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:26:46 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:26:46 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:26:46 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:26:46 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:26:46 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:26:46 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:26:46 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:26:46 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:26:46 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:26:46 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:26:46 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:26:46 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:26:48 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00026-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:26:48 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00012-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:26:49 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00033-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:26:49 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00019-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:26:50 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000026_684
+19/12/02 15:26:50 INFO Executor: Finished task 26.0 in stage 9.0 (TID 684). 8247 bytes result sent to driver
+19/12/02 15:26:50 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000012_670
+19/12/02 15:26:50 INFO Executor: Finished task 12.0 in stage 9.0 (TID 670). 8247 bytes result sent to driver
+19/12/02 15:26:50 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000033_691
+19/12/02 15:26:50 INFO Executor: Finished task 33.0 in stage 9.0 (TID 691). 8204 bytes result sent to driver
+19/12/02 15:26:51 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000019_677
+19/12/02 15:26:51 INFO Executor: Finished task 19.0 in stage 9.0 (TID 677). 8204 bytes result sent to driver
+19/12/02 15:27:09 INFO CoarseGrainedExecutorBackend: Got assigned task 727
+19/12/02 15:27:09 INFO CoarseGrainedExecutorBackend: Got assigned task 733
+19/12/02 15:27:09 INFO CoarseGrainedExecutorBackend: Got assigned task 739
+19/12/02 15:27:09 INFO CoarseGrainedExecutorBackend: Got assigned task 745
+19/12/02 15:27:09 INFO Executor: Running task 60.0 in stage 9.0 (TID 727)
+19/12/02 15:27:09 INFO Executor: Running task 70.0 in stage 9.0 (TID 733)
+19/12/02 15:27:09 INFO Executor: Running task 81.0 in stage 9.0 (TID 739)
+19/12/02 15:27:09 INFO Executor: Running task 87.0 in stage 9.0 (TID 745)
+19/12/02 15:27:09 INFO ShuffleBlockFetcherIterator: Getting 29 non-empty blocks including 0 local blocks and 29 remote blocks
+19/12/02 15:27:09 INFO ShuffleBlockFetcherIterator: Getting 49 non-empty blocks including 0 local blocks and 49 remote blocks
+19/12/02 15:27:09 INFO ShuffleBlockFetcherIterator: Started 2 remote fetches in 20 ms
+19/12/02 15:27:09 INFO ShuffleBlockFetcherIterator: Started 4 remote fetches in 3 ms
+19/12/02 15:27:09 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:27:09 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 1 ms
+19/12/02 15:27:09 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:27:09 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 0 ms
+19/12/02 15:27:09 INFO ShuffleBlockFetcherIterator: Getting 62 non-empty blocks including 0 local blocks and 62 remote blocks
+19/12/02 15:27:09 INFO ShuffleBlockFetcherIterator: Started 4 remote fetches in 20 ms
+19/12/02 15:27:10 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:27:10 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 25 ms
+19/12/02 15:27:10 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:27:10 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:27:10 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:27:10 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:27:10 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:27:10 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:27:10 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:27:10 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:27:10 INFO ShuffleBlockFetcherIterator: Getting 62 non-empty blocks including 0 local blocks and 62 remote blocks
+19/12/02 15:27:10 INFO ShuffleBlockFetcherIterator: Started 4 remote fetches in 8 ms
+19/12/02 15:27:10 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:27:10 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 0 ms
+19/12/02 15:27:10 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:27:10 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:27:10 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:27:10 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:27:10 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:27:10 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:27:10 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:27:10 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:27:11 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00060-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:27:11 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00070-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:27:12 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00081-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:27:12 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000070_733
+19/12/02 15:27:12 INFO Executor: Finished task 70.0 in stage 9.0 (TID 733). 8204 bytes result sent to driver
+19/12/02 15:27:12 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000060_727
+19/12/02 15:27:12 INFO Executor: Finished task 60.0 in stage 9.0 (TID 727). 8204 bytes result sent to driver
+19/12/02 15:27:13 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000081_739
+19/12/02 15:27:13 INFO Executor: Finished task 81.0 in stage 9.0 (TID 739). 8204 bytes result sent to driver
+19/12/02 15:27:14 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00087-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:27:16 INFO MultipartUploadOutputStream: uploadPart: partNum 2 of 's3://sidharth-cs6240/gs_output_small/part-00087-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-7484066182873115376/0000000001', 42298421 bytes in 1212 ms, md5: 1dLjUwM8c4vQj8ADdiW3yQ== md5hex: d5d2e353033c738bd08fc0037625b7c9
+19/12/02 15:27:16 INFO MultipartUploadOutputStream: uploadPart: partNum 1 of 's3://sidharth-cs6240/gs_output_small/part-00087-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-7484066182873115376/0000000000', 134217728 bytes in 2694 ms, md5: keD7gOn3g/fmlbqxK6bxeA== md5hex: 91e0fb80e9f783f7e695bab12ba6f178
+19/12/02 15:27:16 INFO DefaultMultipartUploadDispatcher: Completed multipart upload of 2 parts 176516149 bytes
+19/12/02 15:27:16 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000087_745
+19/12/02 15:27:16 INFO Executor: Finished task 87.0 in stage 9.0 (TID 745). 8204 bytes result sent to driver
+19/12/02 15:27:40 INFO CoarseGrainedExecutorBackend: Got assigned task 785
+19/12/02 15:27:40 INFO CoarseGrainedExecutorBackend: Got assigned task 792
+19/12/02 15:27:40 INFO CoarseGrainedExecutorBackend: Got assigned task 799
+19/12/02 15:27:40 INFO Executor: Running task 107.0 in stage 9.0 (TID 785)
+19/12/02 15:27:40 INFO Executor: Running task 121.0 in stage 9.0 (TID 792)
+19/12/02 15:27:40 INFO CoarseGrainedExecutorBackend: Got assigned task 806
+19/12/02 15:27:40 INFO Executor: Running task 143.0 in stage 9.0 (TID 806)
+19/12/02 15:27:40 INFO Executor: Running task 130.0 in stage 9.0 (TID 799)
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Getting 38 non-empty blocks including 0 local blocks and 38 remote blocks
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Started 5 remote fetches in 9 ms
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Getting 35 non-empty blocks including 0 local blocks and 35 remote blocks
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Started 3 remote fetches in 2 ms
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Getting 41 non-empty blocks including 0 local blocks and 41 remote blocks
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 1 ms
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 0 ms
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Started 3 remote fetches in 22 ms
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Getting 40 non-empty blocks including 0 local blocks and 40 remote blocks
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:27:40 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 0 ms
+19/12/02 15:27:41 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:27:41 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:27:41 INFO ShuffleBlockFetcherIterator: Started 5 remote fetches in 18 ms
+19/12/02 15:27:41 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:27:41 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 1 ms
+19/12/02 15:27:41 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:27:41 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:27:41 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:27:41 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:27:41 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:27:41 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:27:41 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:27:41 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:27:41 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:27:41 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:27:41 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:27:41 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:27:41 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:27:41 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:27:46 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00107-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:27:47 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000107_785
+19/12/02 15:27:47 INFO Executor: Finished task 107.0 in stage 9.0 (TID 785). 8247 bytes result sent to driver
+19/12/02 15:27:48 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00121-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:27:49 INFO MultipartUploadOutputStream: uploadPart: partNum 1 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000000', 134217728 bytes in 5163 ms, md5: vtChCq4TUZQqExprbXpmzQ== md5hex: bed0a10aae1351942a131a6b6d7a66cd
+19/12/02 15:27:50 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000121_792
+19/12/02 15:27:50 INFO Executor: Finished task 121.0 in stage 9.0 (TID 792). 8204 bytes result sent to driver
+19/12/02 15:27:54 INFO MultipartUploadOutputStream: uploadPart: partNum 2 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000001', 134217728 bytes in 4174 ms, md5: uooWAdvJRQ72OmsNl5Oukg== md5hex: ba8a1601dbc9450ef63a6b0d9793ae92
+19/12/02 15:27:54 INFO MultipartUploadOutputStream: uploadPart: partNum 1 of 's3://sidharth-cs6240/gs_output_small/part-00130-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-5370697398934272137/0000000000', 134217728 bytes in 3902 ms, md5: gFUgLPEHCOTZqJZeW4/lBQ== md5hex: 8055202cf10708e4d9a8965e5b8fe505
+19/12/02 15:27:59 INFO MultipartUploadOutputStream: uploadPart: partNum 3 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000002', 134217728 bytes in 4195 ms, md5: vU2ynJgYmPelK5V+MWsvVQ== md5hex: bd4db29c981898f7a52b957e316b2f55
+19/12/02 15:28:00 INFO MultipartUploadOutputStream: uploadPart: partNum 2 of 's3://sidharth-cs6240/gs_output_small/part-00130-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-5370697398934272137/0000000001', 134217728 bytes in 4024 ms, md5: Aijk2EllNH4pEbfitEQe6g== md5hex: 0228e4d84965347e2911b7e2b4441eea
+19/12/02 15:28:00 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00130-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:28:00 INFO CoarseGrainedExecutorBackend: Got assigned task 833
+19/12/02 15:28:00 INFO CoarseGrainedExecutorBackend: Got assigned task 840
+19/12/02 15:28:00 INFO Executor: Running task 177.0 in stage 9.0 (TID 833)
+19/12/02 15:28:00 INFO Executor: Running task 184.0 in stage 9.0 (TID 840)
+19/12/02 15:28:01 INFO ShuffleBlockFetcherIterator: Getting 53 non-empty blocks including 0 local blocks and 53 remote blocks
+19/12/02 15:28:01 INFO ShuffleBlockFetcherIterator: Getting 65 non-empty blocks including 0 local blocks and 65 remote blocks
+19/12/02 15:28:01 INFO ShuffleBlockFetcherIterator: Started 5 remote fetches in 28 ms
+19/12/02 15:28:01 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:28:01 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 0 ms
+19/12/02 15:28:01 INFO ShuffleBlockFetcherIterator: Started 5 remote fetches in 35 ms
+19/12/02 15:28:01 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 9 local blocks and 2 remote blocks
+19/12/02 15:28:01 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 6 ms
+19/12/02 15:28:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:28:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:28:01 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:28:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:28:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 2
+19/12/02 15:28:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: true
+19/12/02 15:28:01 INFO DirectFileOutputCommitter: Direct Write: ENABLED
+19/12/02 15:28:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.DirectFileOutputCommitter
+19/12/02 15:28:02 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00184-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:28:03 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000184_840
+19/12/02 15:28:03 INFO Executor: Finished task 184.0 in stage 9.0 (TID 840). 8204 bytes result sent to driver
+19/12/02 15:28:04 INFO MultipartUploadOutputStream: uploadPart: partNum 4 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000003', 134217728 bytes in 5297 ms, md5: 65I6MblP5sQoURPxcg62Sg== md5hex: eb923a31b94fe6c4285113f1720eb64a
+19/12/02 15:28:05 INFO MultipartUploadOutputStream: uploadPart: partNum 3 of 's3://sidharth-cs6240/gs_output_small/part-00130-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-5370697398934272137/0000000002', 122285510 bytes in 4619 ms, md5: ITEhWVzHtNqYvz1eRWxFaA== md5hex: 213121595cc7b4da98bf3d5e456c4568
+19/12/02 15:28:05 INFO DefaultMultipartUploadDispatcher: Completed multipart upload of 3 parts 390720966 bytes
+19/12/02 15:28:05 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000130_799
+19/12/02 15:28:05 INFO Executor: Finished task 130.0 in stage 9.0 (TID 799). 8204 bytes result sent to driver
+19/12/02 15:28:09 INFO MultipartUploadOutputStream: uploadPart: partNum 5 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000004', 134217728 bytes in 3776 ms, md5: Oo/F3lw/LuAuPXVpS6o3Kw== md5hex: 3a8fc5de5c3f2ee02e3d75694baa372b
+19/12/02 15:28:10 INFO MultipartUploadOutputStream: uploadPart: partNum 1 of 's3://sidharth-cs6240/gs_output_small/part-00177-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-2810915094286376011/0000000000', 134217728 bytes in 4075 ms, md5: qmzGJEEabzWFXCkB6gf9vA== md5hex: aa6cc624411a6f35855c2901ea07fdbc
+19/12/02 15:28:13 INFO MultipartUploadOutputStream: uploadPart: partNum 6 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000005', 134217728 bytes in 3927 ms, md5: oQw37MEpqI/efgaDIqwanQ== md5hex: a10c37ecc129a88fde7e068322ac1a9d
+19/12/02 15:28:16 INFO MultipartUploadOutputStream: uploadPart: partNum 2 of 's3://sidharth-cs6240/gs_output_small/part-00177-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-2810915094286376011/0000000001', 134217728 bytes in 4222 ms, md5: DWNHfGvFdGngjvEMOJI61A== md5hex: 0d63477c6bc57469e08ef10c38923ad4
+19/12/02 15:28:19 INFO MultipartUploadOutputStream: uploadPart: partNum 7 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000006', 134217728 bytes in 4734 ms, md5: V0jgMymnqBM8gA4JKsOSdg== md5hex: 5748e03329a7a8133c800e092ac39276
+19/12/02 15:28:20 INFO MultipartUploadOutputStream: uploadPart: partNum 3 of 's3://sidharth-cs6240/gs_output_small/part-00177-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-2810915094286376011/0000000002', 134217728 bytes in 4361 ms, md5: iSh/FBob6dpm7/hxelLeaQ== md5hex: 89287f141a1be9da66eff8717a52de69
+19/12/02 15:28:22 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00177-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:28:23 INFO MultipartUploadOutputStream: uploadPart: partNum 5 of 's3://sidharth-cs6240/gs_output_small/part-00177-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-2810915094286376011/0000000004', 23691084 bytes in 1141 ms, md5: P/jQ/DlhbZR3x8YIL5mBMg== md5hex: 3ff8d0fc39616d9477c7c6082f998132
+19/12/02 15:28:23 INFO MultipartUploadOutputStream: uploadPart: partNum 8 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000007', 134217728 bytes in 4589 ms, md5: oPhhwoWMrZoqVHN/aLrWGg== md5hex: a0f861c2858cad9a2a54737f68bad61a
+19/12/02 15:28:25 INFO MultipartUploadOutputStream: uploadPart: partNum 4 of 's3://sidharth-cs6240/gs_output_small/part-00177-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-2810915094286376011/0000000003', 134217728 bytes in 4673 ms, md5: XlZERotsGpcY4e8AUwha1A== md5hex: 5e5644468b6c1a9718e1ef0053085ad4
+19/12/02 15:28:26 INFO DefaultMultipartUploadDispatcher: Completed multipart upload of 5 parts 560561996 bytes
+19/12/02 15:28:26 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000177_833
+19/12/02 15:28:26 INFO Executor: Finished task 177.0 in stage 9.0 (TID 833). 8204 bytes result sent to driver
+19/12/02 15:28:26 INFO MultipartUploadOutputStream: uploadPart: partNum 9 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000008', 134217728 bytes in 3089 ms, md5: 7TGVAUii+clKamHATMehbQ== md5hex: ed31950148a2f9c94a6a61c04cc7a16d
+19/12/02 15:28:28 INFO MultipartUploadOutputStream: uploadPart: partNum 10 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000009', 134217728 bytes in 2072 ms, md5: vnqYG1T2XbtxirBKy/caDg== md5hex: be7a981b54f65dbb718ab04acbf71a0e
+19/12/02 15:28:31 INFO MultipartUploadOutputStream: uploadPart: partNum 11 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000010', 134217728 bytes in 2443 ms, md5: 7BI80GJHNMFBXiMbP1fHrA== md5hex: ec123cd0624734c1415e231b3f57c7ac
+19/12/02 15:28:33 INFO MultipartUploadOutputStream: uploadPart: partNum 12 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000011', 134217728 bytes in 2194 ms, md5: IvlRYVOpga/I+SGosoiiEQ== md5hex: 22f9516153a981afc8f921a8b288a211
+19/12/02 15:28:34 INFO MultipartUploadOutputStream: close closed:false s3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv
+19/12/02 15:28:34 INFO MultipartUploadOutputStream: uploadPart: partNum 14 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000013', 12893927 bytes in 462 ms, md5: ARGSONBmAgdDEQXWiTxeeg== md5hex: 01119238d0660207431105d6893c5e7a
+19/12/02 15:28:36 INFO MultipartUploadOutputStream: uploadPart: partNum 13 of 's3://sidharth-cs6240/gs_output_small/part-00143-26cb65e6-5fa9-455d-843a-22d01e6c3478-c000.csv' from local file '/mnt/s3/emrfs-1053375858724717150/0000000012', 134217728 bytes in 2192 ms, md5: UigLZeHpyMzJSacgqdwc/A== md5hex: 52280b65e1e9c8ccc949a720a9dc1cfc
+19/12/02 15:28:37 INFO DefaultMultipartUploadDispatcher: Completed multipart upload of 14 parts 1757724391 bytes
+19/12/02 15:28:37 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_20191202152408_0009_m_000143_806
+19/12/02 15:28:37 INFO Executor: Finished task 143.0 in stage 9.0 (TID 806). 8204 bytes result sent to driver
