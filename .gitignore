@@ -4,3 +4,6 @@ spark/gs_output/
 spark/hbase-insert/target/
 spark/hbase-read/target/
 spark/hbr_output/
+spark/op_final/
+spark/partial_op/
+spark/gs_output_01/

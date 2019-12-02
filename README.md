@@ -1,8 +1,11 @@
-# Apache Spark Followers Count & Joins
+# Ether Trail - CS6240 Fall 2019 Final Project
 
 ### Code author
 Sidharth Malhotra <br/>
 <i>malhotra.si@husky.neu.edu</i>
+
+Girik Malik <br/>
+<i>malik.gi@husky.neu.edu</i>
 
 ### Installation
 These components are installed:
@@ -24,6 +27,8 @@ export SPARK_DIST_CLASSPATH=$(hadoop classpath)
 2) Explicitly set JAVA_HOME in $HADOOP_HOME/etc/hadoop/hadoop-env.sh:
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
+3) HBase v1.14 is required to be installed locally
+
 ### Execution
 All of the build & execution commands are organized in the Makefile.
 - Unzip project file.
@@ -34,6 +39,8 @@ All of the build & execution commands are organized in the Makefile.
 - Standalone Hadoop: <br/>
 	<pre>
     make switch-standalone   	-- set standalone Hadoop environment (execute once)<br/>
-    make local-pr               -- for generating graph & calculating PR
+    make local-gs               -- for DF
+    make local-hbase-insert     -- for HBase Insert
+    make local-hbase-read       -- for HBase Read
 	</pre>
 
