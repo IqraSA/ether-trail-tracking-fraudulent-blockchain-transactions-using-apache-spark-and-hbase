@@ -1,6 +1,6 @@
 # Ether Trail - CS6240 Fall 2019 Final Project
 
-### Code author
+### Code authors
 Sidharth Malhotra <br/>
 <i>malhotra.si@husky.neu.edu</i>
 
