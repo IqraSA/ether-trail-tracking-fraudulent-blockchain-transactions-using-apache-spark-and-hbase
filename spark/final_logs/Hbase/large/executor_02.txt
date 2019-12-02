@@ -1,0 +1,174 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mnt/yarn/usercache/hadoop/filecache/10/__spark_libs__6428055339383850567.zip/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+19/12/01 01:44:31 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 8794@ip-172-31-22-29
+19/12/01 01:44:31 INFO SignalUtils: Registered signal handler for TERM
+19/12/01 01:44:31 INFO SignalUtils: Registered signal handler for HUP
+19/12/01 01:44:31 INFO SignalUtils: Registered signal handler for INT
+19/12/01 01:44:33 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/12/01 01:44:33 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/12/01 01:44:33 INFO SecurityManager: Changing view acls groups to: 
+19/12/01 01:44:33 INFO SecurityManager: Changing modify acls groups to: 
+19/12/01 01:44:33 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/12/01 01:44:33 INFO TransportClientFactory: Successfully created connection to ip-172-31-21-12.ec2.internal/172.31.21.12:46811 after 131 ms (0 ms spent in bootstraps)
+19/12/01 01:44:33 INFO SecurityManager: Changing view acls to: yarn,hadoop
+19/12/01 01:44:33 INFO SecurityManager: Changing modify acls to: yarn,hadoop
+19/12/01 01:44:33 INFO SecurityManager: Changing view acls groups to: 
+19/12/01 01:44:33 INFO SecurityManager: Changing modify acls groups to: 
+19/12/01 01:44:33 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, hadoop); groups with view permissions: Set(); users  with modify permissions: Set(yarn, hadoop); groups with modify permissions: Set()
+19/12/01 01:44:34 INFO TransportClientFactory: Successfully created connection to ip-172-31-21-12.ec2.internal/172.31.21.12:46811 after 2 ms (0 ms spent in bootstraps)
+19/12/01 01:44:34 INFO DiskBlockManager: Created local directory at /mnt/yarn/usercache/hadoop/appcache/application_1571103750666_0001/blockmgr-237c0fbb-3045-45ba-85d3-5a41de718e83
+19/12/01 01:44:34 INFO MemoryStore: MemoryStore started with capacity 2.3 GB
+19/12/01 01:44:34 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@ip-172-31-21-12.ec2.internal:46811
+19/12/01 01:44:34 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+19/12/01 01:44:34 INFO Executor: Starting executor ID 2 on host ip-172-31-22-29.ec2.internal
+19/12/01 01:44:34 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43543.
+19/12/01 01:44:34 INFO NettyBlockTransferService: Server created on ip-172-31-22-29.ec2.internal:43543
+19/12/01 01:44:34 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+19/12/01 01:44:35 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(2, ip-172-31-22-29.ec2.internal, 43543, None)
+19/12/01 01:44:35 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(2, ip-172-31-22-29.ec2.internal, 43543, None)
+19/12/01 01:44:35 INFO BlockManager: external shuffle service port = 7337
+19/12/01 01:44:35 INFO BlockManager: Registering executor with local external shuffle service.
+19/12/01 01:44:35 INFO TransportClientFactory: Successfully created connection to ip-172-31-22-29.ec2.internal/172.31.22.29:7337 after 3 ms (0 ms spent in bootstraps)
+19/12/01 01:44:35 INFO BlockManager: Initialized BlockManager: BlockManagerId(2, ip-172-31-22-29.ec2.internal, 43543, None)
+19/12/01 01:44:35 INFO CoarseGrainedExecutorBackend: Got assigned task 24
+19/12/01 01:44:35 INFO CoarseGrainedExecutorBackend: Got assigned task 25
+19/12/01 01:44:35 INFO CoarseGrainedExecutorBackend: Got assigned task 26
+19/12/01 01:44:35 INFO CoarseGrainedExecutorBackend: Got assigned task 27
+19/12/01 01:44:35 INFO Executor: Running task 6.0 in stage 1.0 (TID 26)
+19/12/01 01:44:35 INFO Executor: Running task 5.0 in stage 1.0 (TID 25)
+19/12/01 01:44:35 INFO Executor: Running task 4.0 in stage 1.0 (TID 24)
+19/12/01 01:44:35 INFO Executor: Running task 7.0 in stage 1.0 (TID 27)
+19/12/01 01:44:35 INFO TorrentBroadcast: Started reading broadcast variable 3
+19/12/01 01:44:35 INFO TransportClientFactory: Successfully created connection to ip-172-31-23-124.ec2.internal/172.31.23.124:42207 after 11 ms (0 ms spent in bootstraps)
+19/12/01 01:44:35 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 2.7 KB, free 2.3 GB)
+19/12/01 01:44:35 INFO TorrentBroadcast: Reading broadcast variable 3 took 301 ms
+19/12/01 01:44:35 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 4.7 KB, free 2.3 GB)
+19/12/01 01:44:36 INFO HadoopRDD: Input split: s3://sidharth-cs6240/input/edges.csv:469762048+67108864
+19/12/01 01:44:36 INFO HadoopRDD: Input split: s3://sidharth-cs6240/input/edges.csv:268435456+67108864
+19/12/01 01:44:36 INFO HadoopRDD: Input split: s3://sidharth-cs6240/input/edges.csv:402653184+67108864
+19/12/01 01:44:36 INFO HadoopRDD: Input split: s3://sidharth-cs6240/input/edges.csv:335544320+67108864
+19/12/01 01:44:36 INFO TorrentBroadcast: Started reading broadcast variable 1
+19/12/01 01:44:36 INFO TransportClientFactory: Successfully created connection to ip-172-31-29-152.ec2.internal/172.31.29.152:40927 after 54 ms (0 ms spent in bootstraps)
+19/12/01 01:44:36 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 33.8 KB, free 2.3 GB)
+19/12/01 01:44:36 INFO TorrentBroadcast: Reading broadcast variable 1 took 105 ms
+19/12/01 01:44:36 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 545.1 KB, free 2.3 GB)
+19/12/01 01:44:37 INFO GPLNativeCodeLoader: Loaded native gpl library
+19/12/01 01:44:37 INFO LzoCodec: Successfully loaded & initialized native-lzo library [hadoop-lzo rev 7e6c862e89bc8db32c064454a55af74ddff73bae]
+19/12/01 01:44:40 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input/edges.csv' for reading
+19/12/01 01:44:40 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input/edges.csv' for reading
+19/12/01 01:44:40 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input/edges.csv' for reading
+19/12/01 01:44:40 INFO S3NativeFileSystem: Opening 's3://sidharth-cs6240/input/edges.csv' for reading
+19/12/01 01:44:40 INFO TorrentBroadcast: Started reading broadcast variable 0
+19/12/01 01:44:40 INFO TransportClientFactory: Successfully created connection to ip-172-31-21-12.ec2.internal/172.31.21.12:38041 after 1 ms (0 ms spent in bootstraps)
+19/12/01 01:44:40 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 120.0 B, free 2.3 GB)
+19/12/01 01:44:40 INFO TorrentBroadcast: Reading broadcast variable 0 took 19 ms
+19/12/01 01:44:40 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 24.0 B, free 2.3 GB)
+19/12/01 01:44:53 INFO Executor: Finished task 4.0 in stage 1.0 (TID 24). 1097 bytes result sent to driver
+19/12/01 01:44:53 INFO Executor: Finished task 5.0 in stage 1.0 (TID 25). 1054 bytes result sent to driver
+19/12/01 01:44:53 INFO Executor: Finished task 7.0 in stage 1.0 (TID 27). 1054 bytes result sent to driver
+19/12/01 01:44:53 INFO Executor: Finished task 6.0 in stage 1.0 (TID 26). 1054 bytes result sent to driver
+19/12/01 01:44:59 INFO CoarseGrainedExecutorBackend: Got assigned task 63
+19/12/01 01:44:59 INFO Executor: Running task 3.0 in stage 2.0 (TID 63)
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Updating epoch to 2 and clearing cache
+19/12/01 01:44:59 INFO CoarseGrainedExecutorBackend: Got assigned task 69
+19/12/01 01:44:59 INFO CoarseGrainedExecutorBackend: Got assigned task 73
+19/12/01 01:44:59 INFO CoarseGrainedExecutorBackend: Got assigned task 77
+19/12/01 01:44:59 INFO Executor: Running task 17.0 in stage 2.0 (TID 77)
+19/12/01 01:44:59 INFO Executor: Running task 9.0 in stage 2.0 (TID 69)
+19/12/01 01:44:59 INFO Executor: Running task 13.0 in stage 2.0 (TID 73)
+19/12/01 01:44:59 INFO TorrentBroadcast: Started reading broadcast variable 5
+19/12/01 01:44:59 INFO TransportClientFactory: Successfully created connection to ip-172-31-26-136.ec2.internal/172.31.26.136:33479 after 2 ms (0 ms spent in bootstraps)
+19/12/01 01:44:59 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 2.0 KB, free 2.3 GB)
+19/12/01 01:44:59 INFO TorrentBroadcast: Reading broadcast variable 5 took 45 ms
+19/12/01 01:44:59 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 3.5 KB, free 2.3 GB)
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@ip-172-31-21-12.ec2.internal:46811)
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Got the output locations
+19/12/01 01:44:59 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks including 4 local blocks and 8 remote blocks
+19/12/01 01:44:59 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks including 4 local blocks and 8 remote blocks
+19/12/01 01:44:59 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks including 4 local blocks and 8 remote blocks
+19/12/01 01:44:59 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks including 4 local blocks and 8 remote blocks
+19/12/01 01:44:59 INFO TransportClientFactory: Successfully created connection to ip-172-31-27-84.ec2.internal/172.31.27.84:7337 after 36 ms (0 ms spent in bootstraps)
+19/12/01 01:44:59 INFO TransportClientFactory: Successfully created connection to ip-172-31-23-124.ec2.internal/172.31.23.124:7337 after 97 ms (0 ms spent in bootstraps)
+19/12/01 01:44:59 INFO ShuffleBlockFetcherIterator: Started 2 remote fetches in 158 ms
+19/12/01 01:44:59 INFO ShuffleBlockFetcherIterator: Started 2 remote fetches in 160 ms
+19/12/01 01:44:59 INFO ShuffleBlockFetcherIterator: Started 2 remote fetches in 158 ms
+19/12/01 01:44:59 INFO ShuffleBlockFetcherIterator: Started 2 remote fetches in 156 ms
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@ip-172-31-21-12.ec2.internal:46811)
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+19/12/01 01:44:59 INFO MapOutputTrackerWorker: Got the output locations
+19/12/01 01:44:59 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks including 0 local blocks and 12 remote blocks
+19/12/01 01:45:00 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 0 local blocks and 11 remote blocks
+19/12/01 01:45:00 INFO ShuffleBlockFetcherIterator: Getting 11 non-empty blocks including 0 local blocks and 11 remote blocks
+19/12/01 01:45:00 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks including 0 local blocks and 12 remote blocks
+19/12/01 01:45:00 INFO TransportClientFactory: Successfully created connection to ip-172-31-29-152.ec2.internal/172.31.29.152:7337 after 4 ms (0 ms spent in bootstraps)
+19/12/01 01:45:00 INFO TransportClientFactory: Successfully created connection to ip-172-31-28-44.ec2.internal/172.31.28.44:7337 after 34 ms (0 ms spent in bootstraps)
+19/12/01 01:45:00 INFO TransportClientFactory: Successfully created connection to ip-172-31-25-118.ec2.internal/172.31.25.118:7337 after 25 ms (0 ms spent in bootstraps)
+19/12/01 01:45:00 INFO ShuffleBlockFetcherIterator: Started 3 remote fetches in 30 ms
+19/12/01 01:45:00 INFO ShuffleBlockFetcherIterator: Started 3 remote fetches in 30 ms
+19/12/01 01:45:00 INFO ShuffleBlockFetcherIterator: Started 3 remote fetches in 27 ms
+19/12/01 01:45:00 INFO ShuffleBlockFetcherIterator: Started 3 remote fetches in 57 ms
+19/12/01 01:45:54 INFO Executor: Finished task 3.0 in stage 2.0 (TID 63). 1398 bytes result sent to driver
+19/12/01 01:46:08 INFO Executor: Finished task 17.0 in stage 2.0 (TID 77). 1398 bytes result sent to driver
+19/12/01 01:46:27 INFO Executor: Finished task 9.0 in stage 2.0 (TID 69). 1398 bytes result sent to driver
+19/12/01 01:46:40 INFO Executor: Finished task 13.0 in stage 2.0 (TID 73). 1398 bytes result sent to driver
+19/12/01 01:46:40 INFO CoarseGrainedExecutorBackend: Got assigned task 81
+19/12/01 01:46:40 INFO CoarseGrainedExecutorBackend: Got assigned task 87
+19/12/01 01:46:40 INFO Executor: Running task 7.0 in stage 4.0 (TID 87)
+19/12/01 01:46:40 INFO MapOutputTrackerWorker: Updating epoch to 4 and clearing cache
+19/12/01 01:46:40 INFO CoarseGrainedExecutorBackend: Got assigned task 93
+19/12/01 01:46:40 INFO Executor: Running task 13.0 in stage 4.0 (TID 93)
+19/12/01 01:46:40 INFO TorrentBroadcast: Started reading broadcast variable 6
+19/12/01 01:46:40 INFO CoarseGrainedExecutorBackend: Got assigned task 99
+19/12/01 01:46:40 INFO Executor: Running task 19.0 in stage 4.0 (TID 99)
+19/12/01 01:46:40 INFO Executor: Running task 1.0 in stage 4.0 (TID 81)
+19/12/01 01:46:40 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 2.0 KB, free 2.3 GB)
+19/12/01 01:46:40 INFO TorrentBroadcast: Reading broadcast variable 6 took 20 ms
+19/12/01 01:46:40 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 3.4 KB, free 2.3 GB)
+19/12/01 01:46:40 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 2, fetching them
+19/12/01 01:46:40 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@ip-172-31-21-12.ec2.internal:46811)
+19/12/01 01:46:40 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 2, fetching them
+19/12/01 01:46:40 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 2, fetching them
+19/12/01 01:46:40 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 2, fetching them
+19/12/01 01:46:40 INFO MapOutputTrackerWorker: Got the output locations
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Getting 20 non-empty blocks including 4 local blocks and 16 remote blocks
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Getting 20 non-empty blocks including 4 local blocks and 16 remote blocks
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Getting 20 non-empty blocks including 4 local blocks and 16 remote blocks
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Getting 20 non-empty blocks including 4 local blocks and 16 remote blocks
+19/12/01 01:46:40 INFO TransportClientFactory: Successfully created connection to ip-172-31-25-1.ec2.internal/172.31.25.1:7337 after 1 ms (0 ms spent in bootstraps)
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Started 3 remote fetches in 18 ms
+19/12/01 01:46:40 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 3, fetching them
+19/12/01 01:46:40 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@ip-172-31-21-12.ec2.internal:46811)
+19/12/01 01:46:40 INFO MapOutputTrackerWorker: Got the output locations
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Getting 10 non-empty blocks including 0 local blocks and 10 remote blocks
+19/12/01 01:46:40 INFO TransportClientFactory: Successfully created connection to ip-172-31-26-136.ec2.internal/172.31.26.136:7337 after 19 ms (0 ms spent in bootstraps)
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Started 3 remote fetches in 53 ms
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks including 0 local blocks and 12 remote blocks
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Started 2 remote fetches in 68 ms
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks including 0 local blocks and 12 remote blocks
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Started 3 remote fetches in 69 ms
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks including 0 local blocks and 12 remote blocks
+19/12/01 01:46:40 INFO TransportClientFactory: Successfully created connection to ip-172-31-30-15.ec2.internal/172.31.30.15:7337 after 17 ms (0 ms spent in bootstraps)
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Started 4 remote fetches in 25 ms
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Started 4 remote fetches in 30 ms
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Started 4 remote fetches in 46 ms
+19/12/01 01:46:40 INFO ShuffleBlockFetcherIterator: Started 4 remote fetches in 79 ms
+19/12/01 01:49:09 INFO ExternalAppendOnlyMap: Thread 33 spilling in-memory map of 649.4 MB to disk (1 time so far)
+19/12/01 01:49:14 INFO ExternalAppendOnlyMap: Thread 34 spilling in-memory map of 632.6 MB to disk (1 time so far)
+19/12/01 02:11:33 INFO Executor: Finished task 19.0 in stage 4.0 (TID 99). 1262 bytes result sent to driver
+19/12/01 02:13:30 INFO Executor: Finished task 1.0 in stage 4.0 (TID 81). 1219 bytes result sent to driver
+19/12/01 02:17:50 INFO Executor: Finished task 7.0 in stage 4.0 (TID 87). 1219 bytes result sent to driver
+19/12/01 02:19:53 INFO Executor: Finished task 13.0 in stage 4.0 (TID 93). 1219 bytes result sent to driver
+19/12/01 02:20:17 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+19/12/01 02:20:17 INFO MemoryStore: MemoryStore cleared
+19/12/01 02:20:17 INFO BlockManager: BlockManager stopped
+19/12/01 02:20:17 INFO ShutdownHookManager: Shutdown hook called
