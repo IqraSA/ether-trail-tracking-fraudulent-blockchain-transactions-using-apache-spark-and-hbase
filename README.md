@@ -1,46 +1,5 @@
-# Ether Trail - CS6240 Fall 2019 Final Project
-
-### Code authors
-Sidharth Malhotra <br/>
-<i>malhotra.si@husky.neu.edu</i>
-
-Girik Malik <br/>
-<i>malik.gi@husky.neu.edu</i>
-
-### Installation
-These components are installed:
-- JDK 1.8
-- Hadoop 2.9.1
-- Maven
-- AWS CLI (for EMR execution)
-
-### Environment
-1) Example ~/.bash_aliases:
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-export HADOOP_HOME=/home/joe/tools/hadoop/hadoop-2.9.1
-export SCALA_HOME=/home/joe/tools/scala/scala-2.11.12
-export SPARK_HOME=/home/joe/tools/spark/spark-2.3.1-bin-without-hadoop
-export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
-export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$SCALA_HOME/bin:$SPARK_HOME/bin
-export SPARK_DIST_CLASSPATH=$(hadoop classpath)
-
-2) Explicitly set JAVA_HOME in $HADOOP_HOME/etc/hadoop/hadoop-env.sh:
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-
-3) HBase v1.14 is required to be installed locally
-
-### Execution
-All of the build & execution commands are organized in the Makefile.
-- Unzip project file.
-- Open command prompt.
-- Navigate to directory where project files unzipped.
-- Create `input` directory at root level of the project 
-- Edit the Makefile to customize the environment at the top.
-- Standalone Hadoop: <br/>
-	<pre>
-    make switch-standalone   	-- set standalone Hadoop environment (execute once)<br/>
-    make local-gs               -- for DF
-    make local-hbase-insert     -- for HBase Insert
-    make local-hbase-read       -- for HBase Read
-	</pre>
-
+# Ether Trail - Tracking Fraudulent Transactions Using Apache Spark
+A proof of concept application that uses Apache Spark to crunch the Ethereum 
+transaction data to find absurd transactions and the trail of those transactions based on the 
+sender’s Ethereum wallet address submitted through a user query. Also, compared the performance and 
+speedup for hash and shuffle join and joins using HBase for finding interesting structures in the given graph problem.
