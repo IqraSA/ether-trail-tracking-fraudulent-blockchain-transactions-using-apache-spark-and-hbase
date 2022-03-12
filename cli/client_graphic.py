@@ -89,10 +89,10 @@ def graph_render(H,p1,f,r0="",r1="",p2='graphs'):
     '''
     p5=""
     path=p1+p2+'/'
-    G=H 
+    G=H
     if not os.path.exists(path):
         os.makedirs(path)
-    
+
     # val_map = {'A': 1.0,
     #                'D': 0.5714285714285714,
     #                           'H': 0.0}
@@ -107,7 +107,7 @@ def graph_render(H,p1,f,r0="",r1="",p2='graphs'):
     edge_colors=[]
 
     # pos=nx.spring_layout(G)
-    pos=nx.fruchterman_reingold_layout(G,k=0.5,iterations=10) 
+    pos=nx.fruchterman_reingold_layout(G,k=0.5,iterations=10)
     nx.draw_networkx_edge_labels(G,pos,edge_labels=edge_labels)
     nx.draw_networkx_labels(G, pos, labels=node_labels)
     # nx.draw(G,pos, node_color = values, node_size=1500,edge_color=edge_colors,edge_cmap=plt.cm.Reds)
@@ -115,7 +115,18 @@ def graph_render(H,p1,f,r0="",r1="",p2='graphs'):
     # pylab.show()
     pylab.axis('off')
     pylab.show()
-    pylab.savefig(path+f.split('/')[-1]+'_'+str(p5)+'_'+str(r0)+'_'+str(r1)+'.png')
+    pylab.savefig(
+        path
+        + f.split('/')[-1]
+        + '_'
+        + p5
+        + '_'
+        + str(r0)
+        + '_'
+        + str(r1)
+        + '.png'
+    )
+
     #pylab.savefig(path+f.split('/')[-1]+'_'+str(p5)+'_type4.png')
     pylab.close()
     ##plt.axis('off')
@@ -128,7 +139,7 @@ def graph_render(H,p1,f,r0="",r1="",p2='graphs'):
 LEVEL=3     # Level to query at
 ID="A"      # ID to be searched
 
-fnames = glob.glob('join_'+str(LEVEL)+'/*')
+fnames = glob.glob(f'join_{LEVEL}/*')
 arrays = [np.loadtxt(f, delimiter=',', dtype=str) for f in fnames]
 join_file = np.concatenate(arrays)
 

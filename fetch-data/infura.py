@@ -30,7 +30,9 @@ class INFURA(object):
     def __init__( self, _project_id, _project_scrt, _network='mainnet' ):        
         self._PROJECT_ID   = _project_id
         self._PROJECT_SCRT = _project_scrt
-        self._URL  = "{}://{}.{}/{}/{}".format(_PROTOCOL,_network,_ENDPOINT,_VERSION,self._PROJECT_ID)
+        self._URL = (
+            f"{_PROTOCOL}://{_network}.{_ENDPOINT}/{_VERSION}/{self._PROJECT_ID}"
+        )
     
     #@Description: Forward facing caller. This function sanitizes outgoing and
     #              handles errors in returns (tbd).  
@@ -40,25 +42,24 @@ class INFURA(object):
     #@Return     :
     # _request     Requests object. 
     def api_call( self, _method, _params=[] ):
-        _headers = {}
-        _headers['Content-Type'] = "application/json"        
+        _headers = {'Content-Type': "application/json"}
         _data = {"id":1,"method":_method,"params":_params} 
 
-        # Catch/handle here. soon to be moved and expection class to be added 
+        # Catch/handle here. soon to be moved and expection class to be added
         try: 
             if _method in _POST_METHOD:
                 _type = "POST" 
                 _rtn  = requests.post(self._URL,headers=_headers,data=json.dumps(_data))
             elif _method in _GET_METHOD:
                 _type = "GET"
-                _rtn  = requests.get(self._URL,headers=_headers,data=json.dumps(_data))                
+                _rtn  = requests.get(self._URL,headers=_headers,data=json.dumps(_data))
             else:
-                print(" Method [ {} ] cannot be found. Returning None ".format(_method))
-                return None            
+                print(f" Method [ {_method} ] cannot be found. Returning None ")
+                return None
         except Exception as e:
-            print("API Exception : {} ".format( str()) )
+            print(f"API Exception : {str()} ")
             return {} 
-            
+
         return _rtn.json()
 
     #@Description: Return the base url 

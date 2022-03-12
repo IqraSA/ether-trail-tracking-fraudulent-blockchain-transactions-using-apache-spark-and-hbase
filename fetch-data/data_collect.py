@@ -19,12 +19,11 @@ class DataCollect:
             result = response["result"]
             timestamp = int(result["timestamp"], 16)
             file_name = "data/" + datetime.utcfromtimestamp(timestamp).strftime('%Y-%m-%d_%H-%M-%S') + "_" + str(int(result["number"], 16)) + ".txt"
-            op_file = open(file_name, 'w')
-            block_hash = result["parentHash"] 
-            transactions = result["transactions"]
-            for i in range(0, len(transactions)):
-                self.parse_transaction(op_file, transactions[i])
-            op_file.close()            
+            with open(file_name, 'w') as op_file:
+                block_hash = result["parentHash"]
+                transactions = result["transactions"]
+                for i in range(len(transactions)):
+                    self.parse_transaction(op_file, transactions[i])
             count += 1
 
     def parse_transaction(self, op_file, txn):
@@ -34,7 +33,7 @@ class DataCollect:
         hash = txn["hash"]
         txn_idx = str(int(txn["blockNumber"], 16))+str(int(txn["transactionIndex"], 16))
         if (to_addr and from_addr and value and txn_idx and hash):
-            op = hash + "," + to_addr + "," + from_addr + "," + value + "," + txn_idx + "\n"
+            op = f'{hash},{to_addr},{from_addr},{value},{txn_idx}' + "\n"
             op_file.write(op)
 
 
